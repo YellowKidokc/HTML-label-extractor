@@ -1,4 +1,3 @@
-# HTML-label-extractor
 # html-component-labeler
 
 Modular HTML component scanner and labeler for the Theophysics publication pipeline.
@@ -8,9 +7,9 @@ Modular HTML component scanner and labeler for the Theophysics publication pipel
 Scans HTML article files and wraps every recognized component with canonical markers:
 
 ```html
-<!-- BEGIN: HERO -->
+<!-- BEGIN: HERO:grid -->
 <section class="hero-grid">...</section>
-<!-- END: HERO -->
+<!-- END: HERO:grid -->
 
 <!-- BEGIN: TAB-PAPER -->
 <section id="paper">...</section>
@@ -23,23 +22,53 @@ $$dS/dt \geq 0$$
 
 These markers make the HTML machine-readable — scripts can find, extract, replace, or validate any component without parsing the full DOM.
 
-## Component Types (current: 17, target: 30+)
+## Canonical Component Vocabulary
 
-### Structural
+**Source of truth:** `Template_Builder__standalone_.html` PARTS registry, mirrored in `components/registry.py`.
+
+The Template Builder defines 9 top-level component slots with 37 visual variants. The labeler detects those slots and records which variant is in use. The assembler can import the same registry so all tools share one vocabulary: Template Builder defines → Labeler detects → Assembler fills.
+
+| # | Slot | Variants | Labeler Marker |
+|---|------|----------|----------------|
+| 01 | Header | Classic, Watermark, Forensic, Centered sun | `HEADER` |
+| 02 | Middle Bar (Tabs) | Sticky underline, Pill row, Numbered, Segmented | `TAB-BAR` |
+| 03 | TTS / Audio Player | Inline bar, Big media card, Docked mini, Dual player | `AUDIO-DOCK` |
+| 04 | Hero Intro | Grid w/ sidecards, Pull quote, Stat row, Equation of motion | `HERO` |
+| 05 | Story Body | Single column, TOC sidebar, Roman-numeral §, With callout boxes | `MAIN-LAYOUT` |
+| 05b | Content Blocks | None, Stat row, Accent grid, Ghost quotes, Callout, Split cards, Timeline, Pill badges, Hero card, Shadow box, Mixed | `CONTENT-BLOCK` |
+| 06 | Media Cards | Stacked list, Resource grid, Scroll strip | `MEDIA-CARDS` |
+| 07 | Series Navigation | Left rail, Breadcrumb, Prev/next, Dot position | `SERIES-NAV` |
+| 08 | Footer | Minimal, Colophon, Signature mark | `FOOTER` |
+
+Variant-aware ranges use qualified marker names such as `HEADER:watermark`, `TAB-BAR:pill`, and `CONTENT-BLOCK:timeline` in both injected HTML markers and JSON inventory output.
+
+The labeler also detects sub-components within these slots, including tab contents, equations, kill cards, metadata, and MDA-specific blocks.
+
+## Component Types
+
+### Template Builder top-level slots
+| Marker | What it finds |
+|--------|--------------|
+| `HEADER:*` | Header slot variants from `data-part="header"`, header classes, or legacy site header markup |
+| `TAB-BAR:*` | Middle/tab bar variants from `data-part="bar"`, tab classes, or reading tab markup |
+| `AUDIO-DOCK:*` | Audio/TTS player variants from `data-part="player"`, audio dock classes, or audio player IDs |
+| `HERO:*` | Hero intro variants from `data-part="hero"`, hero classes, or article hero wrappers |
+| `MAIN-LAYOUT:*` | Story body variants from `data-part="body"` or main layout containers |
+| `CONTENT-BLOCK:*` | Content block variants from `data-part="blocks"` or block-specific classes |
+| `MEDIA-CARDS:*` | Media card variants from `data-part="media"` or media card classes |
+| `SERIES-NAV:*` | Series navigation variants from `data-part="snav"`, breadcrumbs, rails, dots, or prev/next links |
+| `FOOTER:*` | Footer variants from `data-part="footer"`, `<footer>`, or site footer classes |
+
+### Legacy structural aliases
 | Marker | What it finds | Detection method |
 |--------|--------------|-----------------|
 | `TOPBAR` | Site navigation bar | `class="site-header"` / `class="canon-bar"` |
 | `SIDEBAR-NAV` | Series sidebar navigation | `nav.sidebar` |
-| `HERO` | Hero image section | `class="hero-grid"` / `class="article-hero-wrap"` |
-| `MAIN-LAYOUT` | Main content container | `main.main-layout` / `main.container` |
 | `BOTTOM-NAV` | Prev/next article links | `class="bottom-nav"` / `class="article-nav"` |
-| `FOOTER` | Page footer | `<footer>` / `class="site-footer"` |
-| `AUDIO-DOCK` | Audio player dock | `id="audioDock"` / `class="audio-dock"` |
 
 ### Tab System
 | Marker | What it finds |
 |--------|--------------|
-| `TAB-BAR` | Reading-level tab navigation |
 | `TAB-EXECUTIVE-SUMMARY` | Summary tab (`section#summary`) |
 | `TAB-PAPER` | Main paper/story tab (`section#paper`) |
 | `TAB-EXPLAIN-IT-SIMPLE` | Simple explanation tab (`section#simple`) |
@@ -54,16 +83,13 @@ These markers make the HTML machine-readable — scripts can find, extract, repl
 | `KILL-CARD-*` | Kill cards (destructive/suggestive/load-bearing) |
 | `ARTICLE-STATS` | Statistics block after kill cards |
 
-### Needed (MDA-specific — TODO)
-| Marker | What to find |
+### MDA-specific
+| Marker | What it finds |
 |--------|-------------|
 | `PROOF-LAYER` | Proof pressure panels |
 | `MATH-TRANSLATION` | Collapsible math-to-English translation blocks |
 | `DATA-TABLE` | Evidence data tables |
 | `CITATION-BLOCK` | Source citation blocks |
-| `READER-MODE-CONTENT` | Per-reading-level content blocks |
-| `INFOGRAPHIC` | Inline infographic images |
-| `SERIES-RIBBON` | Series position ribbon |
 | `META-BLOCK` | PAGE_META comment block |
 | `OG-TAGS` | Open Graph meta tags |
 | `ANALYTICS` | Analytics script tags |
@@ -88,36 +114,33 @@ python label_sections.py path/to/articles --audit-only
 
 # Output JSON inventory of detected components
 python label_sections.py article.html --json
+
+# Print the Template Builder PARTS vocabulary
+python label_sections.py --registry
+python label_sections.py --registry --json
 ```
 
 ## Architecture
 
 ```
 html-component-labeler/
-├── label_sections.py          # Main entry point
-├── components/                # One file per component type
-│   ├── structural.py          # TOPBAR, SIDEBAR, HERO, FOOTER, etc.
-│   ├── tabs.py                # TAB-* components
-│   ├── content.py             # EQUATION, KILL-CARD, etc.
+├── label_sections.py          # Main entry point and CLI
+├── components/                # One file per detector family
+│   ├── registry.py            # Template Builder PARTS registry (source-of-truth mirror)
+│   ├── structural.py          # HEADER, HERO, MAIN-LAYOUT, SERIES-NAV, FOOTER, aliases
+│   ├── tabs.py                # TAB-BAR variants and TAB-* contents
+│   ├── content.py             # CONTENT-BLOCK, MEDIA-CARDS, EQUATION, KILL-CARD, etc.
 │   ├── mda_specific.py        # PROOF-LAYER, MATH-TRANSLATION, etc.
 │   └── metadata.py            # META-BLOCK, OG-TAGS, ANALYTICS
 ├── core/
 │   ├── parser.py              # DOM traversal utilities
 │   ├── marker.py              # BEGIN/END marker injection
-│   └── inventory.py           # JSON inventory builder
+│   └── inventory.py           # JSON inventory builder and paragraph classification
 ├── tests/
 │   ├── fixtures/              # Sample HTML files for testing
-│   │   ├── gtq_full.html      # Complete GTQ article
-│   │   ├── mda_full.html      # Complete MDA article
-│   │   ├── minimal.html       # Minimal article (few components)
-│   │   └── broken.html        # Intentionally broken HTML
-│   ├── test_structural.py
-│   ├── test_tabs.py
-│   ├── test_content.py
-│   └── test_mda_specific.py
+│   ├── test_cli.py
+│   └── test_components.py
 ├── reference/                 # Classification patterns from other tools
-│   ├── JUSTEXT_PATTERNS.md    # Paragraph scoring approach from jusText
-│   └── TRAFILATURA_PATTERNS.md # Content extraction heuristics
 ├── requirements.txt
 └── README.md
 ```
@@ -140,17 +163,20 @@ def find_proof_layer(html: str) -> list[LabelRange]:
 
 ```python
 COMPONENT_FINDERS = [
+    find_header,
     find_topbar,
     find_sidebar_nav,
     find_hero,
     # ...
-    find_proof_layer,  # ← add here
+    find_proof_layer,
 ]
 ```
 
-3. Add a test fixture and test case.
+3. If it is a Template Builder top-level slot or variant, update `components/registry.py` first and ensure the detector emits the proper variant.
 
-4. Run: `python -m pytest tests/`
+4. Add a test fixture and test case.
+
+5. Run: `python -m pytest tests/`
 
 ## Reference tools
 
@@ -160,187 +186,24 @@ These repos informed the classification approach:
 - [readability](https://github.com/mozilla/readability) — readable content isolation
 - [goose3](https://github.com/goose3/goose3) — article extraction
 
-# Codex Issue Prompts for html-component-labeler
-# ================================================
-# Create these as GitHub Issues. Codex picks them up and creates PRs.
-
----
-
-## Issue 1: Refactor monolith into modular architecture
-
-**Title:** Refactor 02_label_gtq_sections.py into modular component architecture
-
-**Body:**
-The current `02_label_gtq_sections.py` (508 lines) is a single monolithic file. Refactor into:
-
-```
-label_sections.py          # Entry point, CLI
-components/
-  structural.py            # TOPBAR, SIDEBAR-NAV, HERO, MAIN-LAYOUT, BOTTOM-NAV, FOOTER, AUDIO-DOCK
-  tabs.py                  # TAB-BAR, TAB-EXECUTIVE-SUMMARY, TAB-PAPER, TAB-EXPLAIN-IT-SIMPLE, TAB-RIGOR-KILL-CONDITIONS, TAB-WATCH-LISTEN
-  content.py               # PAPER-EQUATION, KILL-SIDEBAR, KILL-CARD-*, ARTICLE-STATS
-  metadata.py              # (new) META-BLOCK, OG-TAGS, ANALYTICS
-core/
-  parser.py                # DOM traversal utilities (has_class, has_id, find_matching_element_end, etc.)
-  marker.py                # BEGIN/END marker injection logic
-  inventory.py             # JSON inventory builder
-```
-
-Preserve ALL existing detection logic exactly. This is a pure structural refactor — same inputs, same outputs.
-
-Add a `COMPONENT_FINDERS` registry list in `label_sections.py` so new components are just new functions added to the list.
-
-**Labels:** refactor, good-first-issue
-
----
-
-## Issue 2: Add MDA-specific component detectors
-
-**Title:** Add detection for MDA-specific HTML components
-
-**Body:**
-The labeler currently handles GTQ components. Add detection for these MDA-specific components:
-
-1. `PROOF-LAYER` — Proof pressure panels. Look for `class="proof-panel"`, `class="proof-pressure"`, or `data-component="proof"`.
-2. `MATH-TRANSLATION` — Collapsible math-to-English blocks. Look for `class="math-translation"`, `class="collapsible-math"`, or `data-layer="math-translation"`.
-3. `DATA-TABLE` — Evidence data tables. Look for `<table>` elements with `class="data-table"`, `class="evidence-table"`, or inside a `div.data-panel`.
-4. `CITATION-BLOCK` — Source citation sections. Look for `class="citation"`, `class="sources"`, `class="references"`, or `id="citations"`.
-5. `ONE-BREATH` — One-breath summary. Look for `class="one-breath"`, `class="article-summary"`, or first `<p>` with `class="lead"`.
-6. `FACTS-CARD` — FACTS methodology card. Look for `class="facts-card"` or content containing "Falsifiable, Anchored, Cross-domain, Testable, Structurally".
-7. `RIGOR-CARD` — Rigor/falsification card. Look for `class="rigor-card"` or `class="falsification-card"`.
-
-Each detector should follow the existing pattern:
-```python
-def find_component(html: str) -> list[LabelRange]:
-    return element_ranges_by_start_tag(html, "MARKER-NAME", predicate, "pattern-description")
-```
-
-Add test fixtures with sample MDA HTML for each component type.
-
-**Labels:** enhancement, mda
-
----
-
-## Issue 3: Add paragraph classification (jusText-style)
-
-**Title:** Add paragraph-level classification using jusText scoring patterns
-
-**Body:**
-Currently the labeler marks structural components but doesn't classify individual paragraphs. Add a paragraph classifier that scores each `<p>` element as:
-
-- `NARRATIVE` — regular prose content (>50 words, no special markers)
-- `CLAIM` — contains strong claim language (proves, must, cannot, always, never)
-- `EVIDENCE` — contains data/citation markers (data, sigma, correlation, source, table)
-- `DEFINITION` — contains definition patterns (:=, "is defined as", em-dash definitions)
-- `TRANSITION` — starts with transition words (however, therefore, moreover)
-- `BOILERPLATE` — navigation text, copyright, repeated phrases across pages
-
-Reference jusText's approach at `reference/JUSTEXT_PATTERNS.md`:
-- Short paragraphs near links → likely navigation (BOILERPLATE)
-- Long paragraphs with high link density → likely boilerplate
-- Paragraphs with no links and >40 words → likely content
-
-Output paragraph classifications in the JSON inventory, not as HTML markers (too noisy for inline marking).
-
-**Labels:** enhancement, nlp
-
----
-
-## Issue 4: Add --audit-only mode with coverage report
-
-**Title:** Add audit mode that reports component coverage without modifying files
-
-**Body:**
-Add `--audit-only` flag that scans HTML files and reports:
-
-1. **Per-file component inventory** — which components are present, which are missing
-2. **Coverage matrix** — files × component types, showing gaps
-3. **Balance check** — BEGIN/END markers matched
-4. **Template conformance** — which components does each file have vs. what the canonical template expects
-
-Output as both JSON and markdown table.
-
-Example output:
-```
-Component Coverage Report
-========================
-File                          TOPBAR  HERO  TAB-BAR  EQUATIONS  PROOF-LAYER  AUDIO-DOCK
-mda-01-introduction.html        ✅     ✅      ✅        ❌          ❌           ✅
-mda-02-phase-transition.html    ✅     ✅      ✅        ✅          ✅           ❌
-...
-
-Missing components by frequency:
-  PROOF-LAYER:      45/62 files missing
-  MATH-TRANSLATION: 52/62 files missing
-  DATA-TABLE:       38/62 files missing
-```
-
-**Labels:** enhancement, audit
-
----
-
-## Issue 5: Add test suite with fixture HTML files
-
-**Title:** Create test suite with GTQ and MDA fixture files
-
-**Body:**
-Create `tests/` directory with:
-
-1. `fixtures/gtq_full.html` — A complete GTQ article with all component types present
-2. `fixtures/mda_full.html` — A complete MDA article with all component types present
-3. `fixtures/minimal.html` — Article with only TOPBAR + MAIN-LAYOUT + FOOTER
-4. `fixtures/broken.html` — Intentionally malformed HTML (unclosed tags, nested errors)
-5. `fixtures/no_components.html` — Plain HTML with no recognizable components
-
-Test cases:
-- Each component detector finds its target in the full fixture
-- Each detector returns empty list for the minimal fixture (where component is absent)
-- Broken HTML doesn't crash the scanner
-- BEGIN/END markers are properly balanced in output
-- `--in-place` creates backup before modifying
-- JSON inventory contains all detected components with correct byte offsets
-
-**Labels:** testing, good-first-issue
-
----
-
-## Issue 6: Markdown-to-component marker pipeline
-
-**Title:** Build reverse pipeline — mark Markdown source files with component tags
-
-**Body:**
-The labeler works HTML→marked HTML. Build the reverse: Markdown→marked Markdown.
-
-Given a raw Markdown article, scan it and inject component markers:
-
-```markdown
-<!--@ COMPONENT: HERO | image: images/mda-01-hero.jpg -->
-<!--@ COMPONENT: TITLE | The FACTS Framework -->
-<!--@ COMPONENT: ONE-BREATH | Before diagnosing America's decline... -->
-
-## Introduction
-<!--@ COMPONENT: SECTION | intro -->
-
-Regular prose here...
-
-<!--@ COMPONENT: MATH-BLOCK | law5-entropy -->
-$$dS/dt \geq 0$$
-<!--@ COMPONENT: MATH-TRANSLATION | The disorder in the system always increases. -->
-```
-
-Detection rules for Markdown:
-- `# Heading` at top → TITLE
-- First paragraph after title → ONE-BREATH candidate
-- `$$...$$` blocks → MATH-BLOCK
-- `![image](path)` → IMAGE (HERO if first image)
-- `> blockquote` → QUOTE or CALLOUT
-- Tables → DATA-TABLE
-- Links to other articles in the series → CROSS-REFERENCE
-
-This is the Stage 2 scanner from the full pipeline design.
-
-**Labels:** enhancement, pipeline, milestone:v2
-
 ## Origin
 
 Based on `02_label_gtq_sections.py` from the Theophysics HTML production pipeline (POF 2828).
+
+Component vocabulary is derived from `Template_Builder__standalone_.html` PARTS registry — a visual configurator that lets you pick which variant of each component slot to use per article. The PARTS registry is the single source of truth: Template Builder defines → Labeler detects → Assembler fills.
+
+### Pipeline Architecture
+
+```
+Template Builder (PARTS registry)     ← defines what components exist
+        ↓
+Stage 1: Template                     ← canonical HTML with all slots
+        ↓
+Stage 2: Labeler (this repo)          ← marks components in existing HTML
+        ↓
+Stage 3: Markdown Scanner             ← marks source markdown with component tags
+        ↓
+Stage 4: Assembler                    ← fills template slots from marked markdown
+        ↓
+Stage 5: Audit                        ← validates all labels present and balanced
+```
