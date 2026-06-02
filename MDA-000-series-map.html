@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<!--
+  PAGE_META
+  series: mda
+  article: mda-000-series-map
+  title: Series Map
+  section: entry-and-series-map
+  status: production
+  template: mda-evidence-v3
+  marked_by: opus-audit-repair
+  marked_date: 2026-05-31
+  source: MDA-000-series-map.html
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Series Map | Moral Decline of America</title>
+<meta name="description" content="A structured map of The Moral Decline of America series: entry pages, story thread, method, evidence chronology, collapse mechanisms, Amish case studies, recovery framework, and appendices.">
+<link rel="canonical" href="https://faiththruphysics.com/moral-decline/00-entry-and-series-map/MDA-000-series-map.html">
+
+<meta property="og:title" content="Series Map | Moral Decline of America">
+<meta property="og:description" content="A structured map of The Moral Decline of America series: entry pages, story thread, method, evidence chronology, collapse mechanisms, Amish case studies, recovery framework, and appendices.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://faiththruphysics.com/moral-decline/00-entry-and-series-map/MDA-000-series-map.html">
+<meta property="og:image" content="https://faiththruphysics.com/images/moral-decline-og.png">
+<meta property="og:site_name" content="Faith Through Physics">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Series Map | Moral Decline of America">
+<meta name="twitter:description" content="A structured map of The Moral Decline of America series: entry pages, story thread, method, evidence chronology, collapse mechanisms, Amish case studies, recovery framework, and appendices.">
+<meta name="twitter:image" content="https://faiththruphysics.com/images/moral-decline-og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                dark: '#050505',
+                card: '#0a0a0a',
+                cardHover: '#111111',
+                accent: '#dc2626',
+                accentDim: '#991b1b',
+                amber: '#f59e0b',
+                amberDim: '#b45309',
+            },
+            fontFamily: {
+                serif: ['Crimson Text', 'Georgia', 'serif'],
+                sans: ['Inter', 'system-ui', 'sans-serif'],
+                display: ['Oswald', 'Impact', 'sans-serif'],
+                mono: ['JetBrains Mono', 'monospace'],
+            }
+        }
+    }
+}
+</script>
+<style>
+    html { scroll-behavior: smooth; }
+    body { background-color: #050505; }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #050505; }
+    ::-webkit-scrollbar-thumb { background: #991b1b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #dc2626; }
+
+    .gradient-line {
+        height: 3px;
+        background: linear-gradient(90deg, #991b1b, #dc2626, #f59e0b, #dc2626, #991b1b);
+    }
+    .hero-gradient {
+        background: radial-gradient(ellipse at 50% 0%, rgba(220,38,38,0.08) 0%, transparent 60%);
+    }
+
+    .series-card {
+        background: #0a0a0a;
+        border: 1px solid #222;
+        transition: all 0.3s ease;
+    }
+    .series-card:hover {
+        border-color: #dc2626;
+        background: #111;
+        box-shadow: 0 0 30px rgba(220,38,38,0.08), inset 0 1px 0 rgba(245,158,11,0.05);
+        transform: translateY(-2px);
+    }
+    .series-card .card-number {
+        color: #991b1b;
+        transition: color 0.3s ease;
+    }
+    .series-card:hover .card-number {
+        color: #dc2626;
+    }
+    .series-card .card-title {
+        color: #e0e0e0;
+        transition: color 0.3s ease;
+    }
+    .series-card:hover .card-title {
+        color: #fff;
+    }
+    .series-card .card-arrow {
+        color: #333;
+        transition: all 0.3s ease;
+    }
+    .series-card:hover .card-arrow {
+        color: #dc2626;
+        transform: translateX(4px);
+    }
+    .status-pill { display:inline-flex; align-items:center; border:1px solid #333; border-radius:4px; padding:.15rem .45rem; font-family:JetBrains Mono,monospace; font-size:.58rem; letter-spacing:.08em; text-transform:uppercase; white-space:nowrap; }
+    .status-live { color:#86efac; border-color:rgba(134,239,172,.25); background:rgba(34,197,94,.08); }
+    .status-story { color:#fbbf24; border-color:rgba(251,191,36,.25); background:rgba(245,158,11,.08); }
+    .status-appendix { color:#93c5fd; border-color:rgba(147,197,253,.25); background:rgba(59,130,246,.08); }
+
+    .story-card {
+        background: #0a0a0a;
+        border: 1px solid #222;
+        transition: all 0.3s ease;
+    }
+    .story-card:hover {
+        border-color: #f59e0b;
+        background: #111;
+        box-shadow: 0 0 30px rgba(245,158,11,0.06);
+        transform: translateY(-2px);
+    }
+    .story-card .card-title {
+        color: #e0e0e0;
+        transition: color 0.3s ease;
+    }
+    .story-card:hover .card-title {
+        color: #f59e0b;
+    }
+
+    .deep-card {
+        background: #0a0a0a;
+        border: 1px solid #222;
+        transition: all 0.3s ease;
+    }
+    .deep-card:hover {
+        border-color: #dc2626;
+        background: #111;
+        box-shadow: 0 0 20px rgba(220,38,38,0.06);
+        transform: translateY(-1px);
+    }
+
+    .section-label {
+        letter-spacing: 0.15em;
+    }
+
+/* RING NAVIGATION */
+.ring-nav{margin:4rem auto;max-width:1100px;padding:3rem 1.5rem;}
+.ring-nav .ring-header{text-align:center;margin-bottom:2.5rem;}
+.ring-nav .ring-header h2{font-family:'Oswald',sans-serif;font-size:1.6rem;color:var(--highlight,#d4af37);text-transform:uppercase;letter-spacing:3px;margin-bottom:.5rem;}
+.ring-nav .ring-header p{color:var(--text-secondary,#a0a0a0);font-size:.9rem;}
+.ring-tier{border:1px solid var(--border,#333);border-radius:8px;margin-bottom:1rem;overflow:hidden;}
+.ring-tier-header{display:flex;align-items:center;gap:.75rem;padding:1rem 1.25rem;cursor:pointer;transition:background .2s;}
+.ring-tier-header:hover{background:rgba(255,255,255,0.03);}
+.ring-tier-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.ring-1 .ring-tier-dot{background:#d4af37;}
+.ring-2 .ring-tier-dot{background:#4a9eff;}
+.ring-3 .ring-tier-dot{background:#8b7fc2;}
+.ring-tier-label{font-family:'Oswald',sans-serif;font-size:.85rem;text-transform:uppercase;letter-spacing:2px;color:var(--text-primary,#e0e0e0);}
+.ring-tier-desc{color:var(--text-secondary,#a0a0a0);font-size:.8rem;margin-left:auto;}
+.ring-tier-chevron{color:var(--text-secondary,#a0a0a0);font-size:.7rem;transition:transform .3s;margin-left:.5rem;}
+.ring-tier.open .ring-tier-chevron{transform:rotate(90deg);}
+.ring-tier-cards{display:none;padding:1rem 1.25rem;}
+.ring-tier.open .ring-tier-cards{display:block;}
+.ring-empty{color:#666;font-size:.85rem;font-style:italic;}</style>
+  <script defer src="https://analytics.faiththruphysics.com/script.js" data-website-id="2f2e3a0f-e8e5-4900-a1e0-1b33592403ee"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>
+/* ===== COMPONENT:audio:audio-pill-player | CODEX_MDA_CUSTOM_PILL_AUDIO_20260517 ===== */
+.mda-audio-player{
+  --active:#d4af37;
+  --active-rgb:212,175,55;
+  position:relative;
+  overflow:hidden;
+  margin:1.35rem 0 2rem;
+  border:1px solid rgba(var(--active-rgb),.42);
+  border-radius:.9rem;
+  background:linear-gradient(135deg,rgba(var(--active-rgb),.13),rgba(24,24,24,.96) 44%,rgba(8,8,8,.98));
+  box-shadow:0 24px 80px rgba(0,0,0,.36),0 0 44px rgba(var(--active-rgb),.09);
+  transition:border-color .25s ease,box-shadow .25s ease,background .25s ease;
+}
+.mda-audio-player::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto;
+  height:3px;
+  background:linear-gradient(90deg,transparent,var(--active),transparent);
+}
+.mda-audio-player .pill-row{display:flex;flex-wrap:wrap;gap:.65rem;padding:1.05rem 1.15rem .3rem;}
+.mda-audio-player .mode-pill{
+  display:inline-flex;align-items:center;gap:.45rem;min-height:34px;
+  border:1px solid rgba(255,255,255,.13);border-radius:999px;padding:.05rem .85rem 0;
+  background:rgba(0,0,0,.2);color:#b8b8b8;font-family:"JetBrains Mono",monospace;
+  font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  cursor:pointer;transition:all .2s ease;
+}
+.mda-audio-player .mode-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--pill-color);box-shadow:0 0 12px rgba(var(--pill-rgb),.45);}
+.mda-audio-player .mode-pill:hover{color:#fff;border-color:var(--pill-color);background:rgba(var(--pill-rgb),.12);}
+.mda-audio-player .mode-pill.active{color:var(--pill-color);border-color:var(--pill-color);background:rgba(var(--pill-rgb),.16);}
+.mda-audio-player .mode-pill.unavailable{opacity:.38;cursor:pointer;}
+.mda-audio-player .mode-pill.unavailable:hover{color:#b8b8b8;background:rgba(0,0,0,.2);}
+.mda-audio-player .player-body{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;padding:1rem 1.15rem 1.15rem;}
+.mda-audio-player .play-btn{width:58px;height:58px;border-radius:50%;border:2px solid var(--active);background:rgba(var(--active-rgb),.1);color:var(--active);display:grid;place-items:center;cursor:pointer;font-size:1.1rem;transition:all .2s ease;}
+.mda-audio-player .play-btn:hover{background:rgba(var(--active-rgb),.18);transform:translateY(-1px);}
+.mda-audio-player .track-area{min-width:0;}
+.mda-audio-player .player-label{display:flex;flex-wrap:wrap;align-items:center;gap:.65rem;margin-bottom:.55rem;}
+.mda-audio-player .player-kind{font-family:"JetBrains Mono",monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--active);}
+.mda-audio-player .player-title{font-weight:800;color:#fff;letter-spacing:.01em;}
+.mda-audio-player .player-desc{color:var(--text-muted,#a7a7a7);font-size:.88rem;line-height:1.45;margin:0 0 .75rem;}
+.mda-audio-player .track{position:relative;height:8px;border-radius:999px;background:#262626;cursor:pointer;overflow:hidden;}
+.mda-audio-player .fill{height:100%;width:0%;border-radius:inherit;background:linear-gradient(90deg,var(--active),rgba(var(--active-rgb),.55));}
+.mda-audio-player .time-row{display:flex;justify-content:space-between;margin-top:.42rem;color:#777;font-family:"JetBrains Mono",monospace;font-size:.68rem;}
+.mda-audio-player .right-controls{display:flex;align-items:center;gap:.6rem;}
+.mda-audio-player .icon-btn{width:36px;height:36px;border:1px solid rgba(255,255,255,.12);border-radius:50%;background:rgba(0,0,0,.14);color:#aaa;cursor:pointer;}
+.mda-audio-player .icon-btn:hover{color:var(--active);border-color:var(--active);}
+.mda-audio-player .native-audio{display:none;}
+@media(max-width:720px){
+  .mda-audio-player .player-body{grid-template-columns:auto 1fr;}
+  .mda-audio-player .right-controls{grid-column:1/-1;justify-content:flex-end;}
+  .mda-audio-player .play-btn{width:50px;height:50px;}
+}
+</style>
+<link rel="stylesheet" href="assets/css/ring-nav.css">
+<link rel="stylesheet" href="assets/css/audio-player.css">
+<script src="assets/js/audio-player.js" defer></script>
+</head>
+<body class="font-sans text-gray-300 min-h-screen">
+<nav style="position:sticky;top:0;z-index:1000;background:#0a0a0a;border-bottom:1px solid #222;padding:.5rem 1.5rem;display:flex;align-items:center;justify-content:space-between;font-family:'Inter',sans-serif;font-size:.8rem;">
+  <div style="display:flex;gap:1rem;align-items:center;">
+    <a href="/index.html" style="color:#999;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#ef4444'" onmouseout="this.style.color='#999'"><i class="fas fa-home" style="margin-right:.35rem;font-size:.65rem;"></i>Home</a>
+  </div>
+  <div style="display:flex;gap:1rem;align-items:center;">
+    <span style="color:#333;">Previous</span>
+    <span style="color:#333;">|</span>
+    <span style="color:#333;">Next</span>
+  </div>
+  <div style="display:flex;gap:1rem;align-items:center;">
+    <a href="index.html" style="color:#ef4444;text-decoration:none;font-weight:500;transition:color .2s;" onmouseover="this.style.color='#f87171'" onmouseout="this.style.color='#ef4444'"><i class="fas fa-th-list" style="margin-right:.35rem;font-size:.65rem;"></i>Series Home</a>
+  </div>
+</nav>
+
+
+
+<!-- Back Link -->
+<div class="max-w-5xl mx-auto px-6 pt-8">
+    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-accent transition-colors font-mono">
+        <i class="fa-solid fa-arrow-left text-xs"></i>
+        Back to Main Index
+    </a>
+</div>
+
+<!-- Hero -->
+<header class="hero-gradient pt-16 pb-20">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+        <p class="section-label uppercase text-xs font-mono text-accent tracking-widest mb-6">Series Architecture Map</p>
+<figure class="story-image" style="margin: 2.5em 0; text-align: center;">
+  <img src="../images/mda/PHASE_TRANSITION%20conv%207.webp" alt="Story Illustration" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.3);" />
+</figure>
+
+        <h1 class="font-display text-5xl md:text-7xl font-bold text-white leading-tight mb-8 tracking-tight">Series Map</h1>
+
+        <div class="gradient-line max-w-md mx-auto mb-8"></div>
+        <p class="font-serif text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed italic">125 years. Nine domains. Multiple evidence lanes. A structured map of the MDA investigation.</p>
+    </div>
+</header>
+
+<main class="max-w-5xl mx-auto px-6 pb-24">
+<section id="architecture-overview" class="mb-16 rounded-lg border border-gray-800 bg-black/30 p-6">
+  <p class="section-label uppercase text-xs font-mono text-accent tracking-widest mb-3">MDA-000 role</p>
+  <p class="text-gray-400 font-serif text-lg leading-relaxed">This page is the full architecture map, publication index, and status board. Use <a href="index.html" class="text-accent hover:text-white">index.html</a> as the public front door; use this map to see every lane, category, and appendix in the broader MDA system.</p>
+  <div class="mt-5 grid md:grid-cols-2 gap-3 text-sm text-gray-500 font-sans">
+    <div><span class="status-pill status-live">Published</span> linked page is in the deploy tree.</div>
+    <div><span class="status-pill status-appendix">Appendix</span> support packet or source material.</div>
+  </div>
+</section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- PUBLIC READING PATH -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="mb-24">
+        <div class="flex items-center gap-4 mb-10">
+            <div class="w-10 h-px bg-accent"></div>
+            <h2 class="section-label uppercase text-sm font-mono text-accent tracking-widest">Public Reading Path</h2>
+            <div class="flex-1 h-px bg-gradient-to-r from-accent/20 to-transparent"></div>
+        </div>
+
+        <div class="grid gap-3">
+            <!-- Part 1 -->
+            <a href="../90-appendices-and-source-packets/MDA-900-appendix-original-introduction.html" class="series-card rounded-lg px-6 py-5 flex items-center gap-5 group">
+                <span class="card-number font-mono text-2xl font-bold w-10 text-right">01</span>
+                <div class="w-px h-8 bg-gray-800"></div>
+                <span class="card-title font-sans text-lg font-medium flex-1">Introduction</span>
+                <span class="status-pill status-appendix">Appendix</span>
+                <i class="fa-solid fa-arrow-right card-arrow text-sm"></i>
+            </a>
+            <!-- Part 2 -->
+            <a href="../04-collapse-mechanisms/MDA-021-anatomy-of-phase-transition.html" class="series-card rounded-lg px-6 py-5 flex items-center gap-5 group">
+                <span class="card-number font-mono text-2xl font-bold w-10 text-right">02</span>
+                <div class="w-px h-8 bg-gray-800"></div>
+                <span class="card-title font-sans text-lg font-medium flex-1">The Phase Transition</span>
+                <span class="status-pill status-live">Published</span>
+                <i class="fa-solid fa-arrow-right card-arrow text-sm"></i>
+            </a>
+            <!-- Part 3 -->
+            <a href="../04-collapse-mechanisms/MDA-024-semantic-collapse.html" class="series-card rounded-lg px-6 py-5 flex items-center gap-5 group">
+                <span class="card-number font-mono text-2xl font-bold w-10 text-right">03</span>
+                <div class="w-px h-8 bg-gray-800"></div>
+                <span class="card-title font-sans text-lg font-medium flex-1">Semantic Collapse</span>
+                <span class="status-pill status-live">Published</span>
+                <i class="fa-solid fa-arrow-right card-arrow text-sm"></i>
+            </a>
+            <!-- Part 4 -->
+            <a href="../04-collapse-mechanisms/MDA-025-cognitive-decline.html" class="series-card rounded-lg px-6 py-5 flex items-center gap-5 group">
+                <span class="card-number font-mono text-2xl font-bold w-10 text-right">04</span>
+                <div class="w-px h-8 bg-gray-800"></div>
+                <span class="card-title font-sans text-lg font-medium flex-1">Cognitive Decline</span>
+                <span class="status-pill status-live">Published</span>
+                <i class="fa-solid fa-arrow-right card-arrow text-sm"></i>
+            </a>
+            <!-- Part 5 -->
+            <a href="../04-collapse-mechanisms/MDA-026-spiritual-collapse.html" class="series-card rounded-lg px-6 py-5 flex items-center gap-5 group">
+                <span class="card-number font-mono text-2xl font-bold w-10 text-right">05</span>
+                <div class="w-px h-8 bg-gray-800"></div>
+                <span class="card-title font-sans text-lg font-medium flex-1">Spiritual Collapse</span>
+                <span class="status-pill status-live">Published</span>
+                <i class="fa-solid fa-arrow-right card-arrow text-sm"></i>
+            </a>
+            <!-- Part 6 -->
+            <a href="../04-collapse-mechanisms/MDA-027-signal-went-dark.html" class="series-card rounded-lg px-6 py-5 flex items-center gap-5 group">
+                <span class="card-number font-mono text-2xl font-bold w-10 text-right">06</span>
+                <div class="w-px h-8 bg-gray-800"></div>
+                <span class="card-title font-sans text-lg font-medium flex-1">The Signal Went Dark</span>
+                <span class="status-pill status-live">Published</span>
+                <i class="fa-solid fa-arrow-right card-arrow text-sm"></i>
+            </a>
+            <!-- Part 7 -->
+            <a href="../04-collapse-mechanisms/MDA-028-phantom-money.html" class="series-card rounded-lg px-6 py-5 flex items-center gap-5 group">
+                <span class="card-number font-mono text-2xl font-bold w-10 text-right">07</span>
+                <div class="w-px h-8 bg-gray-800"></div>
+                <span class="card-title font-sans text-lg font-medium flex-1">Phantom Money</span>
+                <span class="status-pill status-live">Published</span>
+                <i class="fa-solid fa-arrow-right card-arrow text-sm"></i>
+            </a>
+            <!-- Part 8 -->
+            <a href="../04-collapse-mechanisms/MDA-029-observer-collapsed.html" class="series-card rounded-lg px-6 py-5 flex items-center gap-5 group">
+                <span class="card-number font-mono text-2xl font-bold w-10 text-right">08</span>
+                <div class="w-px h-8 bg-gray-800"></div>
+                <span class="card-title font-sans text-lg font-medium flex-1">The Observer Collapsed</span>
+                <span class="status-pill status-live">Published</span>
+                <i class="fa-solid fa-arrow-right card-arrow text-sm"></i>
+            </a>
+            <!-- Part 9 -->
+            <a href="../05-amish-and-case-studies/MDA-043-amish-proof-THE-PROOF.html" class="series-card rounded-lg px-6 py-5 flex items-center gap-5 group">
+                <span class="card-number font-mono text-2xl font-bold w-10 text-right">09</span>
+                <div class="w-px h-8 bg-gray-800"></div>
+                <span class="card-title font-sans text-lg font-medium flex-1">The Amish Proof</span>
+                <span class="status-pill status-live">Published</span>
+                <i class="fa-solid fa-arrow-right card-arrow text-sm"></i>
+            </a>
+            <!-- Part 10 -->
+            <a href="../06-recovery-and-synthesis/MDA-054-way-back.html" class="series-card rounded-lg px-6 py-5 flex items-center gap-5 group">
+                <span class="card-number font-mono text-2xl font-bold w-10 text-right">10</span>
+                <div class="w-px h-8 bg-gray-800"></div>
+                <span class="card-title font-sans text-lg font-medium flex-1">The Way Back</span>
+                <span class="status-pill status-live">Published</span>
+                <i class="fa-solid fa-arrow-right card-arrow text-sm"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- THE LOWE FAMILY STORIES                     -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="mb-24">
+        <div class="flex items-center gap-4 mb-4">
+            <div class="w-10 h-px bg-amber"></div>
+            <h2 class="section-label uppercase text-sm font-mono text-amber tracking-widest">The Lowe Family Stories</h2>
+            <div class="flex-1 h-px bg-gradient-to-r from-amber/20 to-transparent"></div>
+        </div>
+        <p class="text-gray-500 font-serif text-lg italic mb-10 ml-14">
+            Six generations. One family. The decline made personal.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-3">
+            <a href="../01-story-thread/MDA-001-story-introduction.html" class="story-card rounded-lg px-6 py-5 flex items-center gap-4 group">
+                <i class="fa-solid fa-book-open text-amber/40 text-sm w-5 text-center"></i>
+                <span class="card-title font-sans font-medium flex-1">Introduction: The Lowe Family</span>
+                <span class="status-pill status-story">Story</span>
+                <i class="fa-solid fa-arrow-right text-gray-700 text-xs group-hover:text-amber/60 transition-colors"></i>
+            </a>
+            <a href="../01-story-thread/MDA-002-samuel-1900.html" class="story-card rounded-lg px-6 py-5 flex items-center gap-4 group">
+                <span class="font-mono text-amber/30 text-xs w-5 text-center">1900</span>
+                <span class="card-title font-sans font-medium flex-1">Samuel, 1900</span>
+                <span class="status-pill status-story">Story</span>
+                <i class="fa-solid fa-arrow-right text-gray-700 text-xs group-hover:text-amber/60 transition-colors"></i>
+            </a>
+            <a href="../01-story-thread/MDA-008-henry-1926.html" class="story-card rounded-lg px-6 py-5 flex items-center gap-4 group">
+                <span class="font-mono text-amber/30 text-xs w-5 text-center">1926</span>
+                <span class="card-title font-sans font-medium flex-1">Henry, 1926</span>
+                <span class="status-pill status-story">Story</span>
+                <i class="fa-solid fa-arrow-right text-gray-700 text-xs group-hover:text-amber/60 transition-colors"></i>
+            </a>
+            <a href="../01-story-thread/MDA-012-william-1950.html" class="story-card rounded-lg px-6 py-5 flex items-center gap-4 group">
+                <span class="font-mono text-amber/30 text-xs w-5 text-center">1950</span>
+                <span class="card-title font-sans font-medium flex-1">William, 1950</span>
+                <span class="status-pill status-story">Story</span>
+                <i class="fa-solid fa-arrow-right text-gray-700 text-xs group-hover:text-amber/60 transition-colors"></i>
+            </a>
+            <a href="../01-story-thread/MDA-016-thomas-1974.html" class="story-card rounded-lg px-6 py-5 flex items-center gap-4 group">
+                <span class="font-mono text-amber/30 text-xs w-5 text-center">1974</span>
+                <span class="card-title font-sans font-medium flex-1">Thomas, 1974</span>
+                <span class="status-pill status-story">Story</span>
+                <i class="fa-solid fa-arrow-right text-gray-700 text-xs group-hover:text-amber/60 transition-colors"></i>
+            </a>
+            <a href="../01-story-thread/MDA-031-jacob-1998.html" class="story-card rounded-lg px-6 py-5 flex items-center gap-4 group">
+                <span class="font-mono text-amber/30 text-xs w-5 text-center">1998</span>
+                <span class="card-title font-sans font-medium flex-1">Jacob, 1998</span>
+                <span class="status-pill status-story">Story</span>
+                <i class="fa-solid fa-arrow-right text-gray-700 text-xs group-hover:text-amber/60 transition-colors"></i>
+            </a>
+            <a href="../01-story-thread/MDA-050-jacob-2025.html" class="story-card rounded-lg px-6 py-5 flex items-center gap-4 group md:col-span-2">
+                <span class="font-mono text-amber/30 text-xs w-5 text-center">2025</span>
+                <span class="card-title font-sans font-medium flex-1">Jacob, 2025</span>
+                <span class="status-pill status-story">Story</span>
+                <i class="fa-solid fa-arrow-right text-gray-700 text-xs group-hover:text-amber/60 transition-colors"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- CORE PAPERS & DOMAIN ANALYSIS               -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="mb-24">
+        <div class="flex items-center gap-4 mb-4">
+            <div class="w-10 h-px bg-accent"></div>
+            <h2 class="section-label uppercase text-sm font-mono text-accent tracking-widest">Core Papers &amp; Domain Analysis</h2>
+            <div class="flex-1 h-px bg-gradient-to-r from-accent/20 to-transparent"></div>
+        </div>
+        <p class="text-gray-500 font-serif text-lg italic mb-10 ml-14">
+            The theoretical framework, empirical evidence, and domain-level deep research.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-3">
+            <a href="../04-collapse-mechanisms/MDA-032-why-bad-is-easier.html" class="deep-card rounded-lg px-6 py-5 group">
+                <div class="flex items-center gap-3 mb-2">
+                    <i class="fa-solid fa-scale-unbalanced text-accent/40 text-sm"></i>
+                    <span class="font-sans font-medium text-gray-300 group-hover:text-white transition-colors">Why the Bad Is Easier Than the Good</span>
+                        <span class="status-pill status-live">Published</span>
+                </div>
+                <p class="text-gray-600 text-sm font-sans ml-7">The asymmetry problem &mdash; entropy, shortcuts, and the structural cost of virtue</p>
+            </a>
+            <a href="../02-method-and-metrics/MDA-038-coherence-metric.html" class="deep-card rounded-lg px-6 py-5 group">
+                <div class="flex items-center gap-3 mb-2">
+                    <i class="fa-solid fa-chart-line text-accent/40 text-sm"></i>
+                    <span class="font-sans font-medium text-gray-300 group-hover:text-white transition-colors">The Coherence Metric</span>
+                        <span class="status-pill status-live">Published</span>
+                </div>
+                <p class="text-gray-600 text-sm font-sans ml-7">A physics-based framework for measuring structural integrity across domains</p>
+            </a>
+            <a href="../03-evidence-chronology/MDA-005-empirical-evidence.html" class="deep-card rounded-lg px-6 py-5 group">
+                <div class="flex items-center gap-3 mb-2">
+                    <i class="fa-solid fa-flask-vial text-accent/40 text-sm"></i>
+                    <span class="font-sans font-medium text-gray-300 group-hover:text-white transition-colors">The Empirical Evidence</span>
+                        <span class="status-pill status-live">Published</span>
+                </div>
+                <p class="text-gray-600 text-sm font-sans ml-7">Four predictions, four tests, all confirmed &mdash; R&#x0304; = 0.986, p &lt; 10&#x207B;&#x2078;</p>
+            </a>
+            <a href="../04-collapse-mechanisms/MDA-035-great-reconfiguration.html" class="deep-card rounded-lg px-6 py-5 group">
+                <div class="flex items-center gap-3 mb-2">
+                    <i class="fa-solid fa-church text-accent/40 text-sm"></i>
+                    <span class="font-sans font-medium text-gray-300 group-hover:text-white transition-colors">The Great Reconfiguration</span>
+                        <span class="status-pill status-live">Published</span>
+                </div>
+                <p class="text-gray-600 text-sm font-sans ml-7">A century of structural change in American Christianity (1900&ndash;2024)</p>
+            </a>
+            <a href="../04-collapse-mechanisms/MDA-033-entropic-society.html" class="deep-card rounded-lg px-6 py-5 group">
+                <div class="flex items-center gap-3 mb-2">
+                    <i class="fa-solid fa-microchip text-accent/40 text-sm"></i>
+                    <span class="font-sans font-medium text-gray-300 group-hover:text-white transition-colors">The Entropic Society</span>
+                        <span class="status-pill status-live">Published</span>
+                </div>
+                <p class="text-gray-600 text-sm font-sans ml-7">Technology, obsolescence, and the devaluation of American moral capital (1950&ndash;2025)</p>
+            </a>
+            <a href="../04-collapse-mechanisms/MDA-036-regulatory-impulse-1900.html" class="deep-card rounded-lg px-6 py-5 group">
+                <div class="flex items-center gap-3 mb-2">
+                    <i class="fa-solid fa-landmark text-accent/40 text-sm"></i>
+                    <span class="font-sans font-medium text-gray-300 group-hover:text-white transition-colors">The Regulatory Impulse (1900&ndash;1910)</span>
+                        <span class="status-pill status-live">Published</span>
+                </div>
+                <p class="text-gray-600 text-sm font-sans ml-7">Defining America&rsquo;s moral foundation in the Progressive Era</p>
+<figure class="story-image" style="margin: 2.5em 0; text-align: center;">
+  <img src="../images/mda/Signal_Blackout%20conv%205.webp" alt="Story Illustration" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.3);" />
+</figure>
+
+            </a>
+            <a href="../02-method-and-metrics/MDA-037-biaxiosum-audit.html" class="deep-card rounded-lg px-6 py-5 group">
+                <div class="flex items-center gap-3 mb-2">
+                    <i class="fa-solid fa-eye text-accent/40 text-sm"></i>
+                    <span class="font-sans font-medium text-gray-300 group-hover:text-white transition-colors">The Biaxiosum Audit</span>
+                        <span class="status-pill status-live">Published</span>
+                </div>
+                <p class="text-gray-600 text-sm font-sans ml-7">Name your bias &mdash; the Founders vs. the Modern State</p>
+            </a>
+            <a href="../02-method-and-metrics/MDA-006-research-method.html" class="deep-card rounded-lg px-6 py-5 group">
+                <div class="flex items-center gap-3 mb-2">
+                    <i class="fa-solid fa-compass text-accent/40 text-sm"></i>
+                    <span class="font-sans font-medium text-gray-300 group-hover:text-white transition-colors">Research Method</span>
+                        <span class="status-pill status-live">Published</span>
+                </div>
+                <p class="text-gray-600 text-sm font-sans ml-7">Human-led research with AI as collaborator, not authority</p>
+            </a>
+            <a href="../04-collapse-mechanisms/MDA-030-trinity-mechanism.html" class="deep-card rounded-lg px-6 py-5 group">
+                <div class="flex items-center gap-3 mb-2">
+                    <i class="fa-solid fa-atom text-accent/40 text-sm"></i>
+                    <span class="font-sans font-medium text-gray-300 group-hover:text-white transition-colors">The Trinity-Wave Collapse Mechanism</span>
+                        <span class="status-pill status-live">Published</span>
+                </div>
+                <p class="text-gray-600 text-sm font-sans ml-7">How Father, Son, and Spirit actualize every quantum moment</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- DEEP DIVES                                  -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="mb-16">
+        <div class="flex items-center gap-4 mb-4">
+            <div class="w-10 h-px bg-gray-600"></div>
+            <h2 class="section-label uppercase text-sm font-mono text-gray-500 tracking-widest">Deep Dives</h2>
+            <div class="flex-1 h-px bg-gradient-to-r from-gray-800 to-transparent"></div>
+        </div>
+        <p class="text-gray-600 font-serif text-lg italic mb-10 ml-14">
+            Supplementary analysis and academic papers.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-3">
+            <a href="../90-appendices-and-source-packets/MDA-902-appendix-trans-domain-analysis.html" class="deep-card rounded-lg px-6 py-5 group">
+                <div class="flex items-center gap-3 mb-2">
+                    <i class="fa-solid fa-microscope text-accent/40 text-sm"></i>
+                    <span class="font-sans font-medium text-gray-300 group-hover:text-white transition-colors">The Complete Analysis</span>
+                        <span class="status-pill status-appendix">Appendix</span>
+                </div>
+                <p class="text-gray-600 text-sm font-sans ml-7">Trans-domain analysis of American moral decline</p>
+            </a>
+            <a href="../03-evidence-chronology/MDA-005-empirical-evidence.html" class="deep-card rounded-lg px-6 py-5 group">
+                <div class="flex items-center gap-3 mb-2">
+                    <i class="fa-solid fa-graduation-cap text-accent/40 text-sm"></i>
+                    <span class="font-sans font-medium text-gray-300 group-hover:text-white transition-colors">FACTS: The Academic Case</span>
+                        <span class="status-pill status-live">Published</span>
+                </div>
+                <p class="text-gray-600 text-sm font-sans ml-7">The formal academic framework and methodology</p>
+            </a>
+            <a href="../04-collapse-mechanisms/MDA-034-technology-entropy.html" class="deep-card rounded-lg px-6 py-5 group">
+                <div class="flex items-center gap-3 mb-2">
+                    <i class="fa-solid fa-microchip text-accent/40 text-sm"></i>
+                    <span class="font-sans font-medium text-gray-300 group-hover:text-white transition-colors">Technology & Entropy</span>
+                        <span class="status-pill status-live">Published</span>
+                </div>
+                <p class="text-gray-600 text-sm font-sans ml-7">How technological acceleration drives moral entropy</p>
+            </a>
+            <a href="../90-appendices-and-source-packets/MDA-905-appendix-timeline.html" class="deep-card rounded-lg px-6 py-5 group">
+                <div class="flex items-center gap-3 mb-2">
+                    <i class="fa-solid fa-timeline text-accent/40 text-sm"></i>
+                    <span class="font-sans font-medium text-gray-300 group-hover:text-white transition-colors">Historical Timeline: 1900-2025</span>
+                        <span class="status-pill status-appendix">Appendix</span>
+                </div>
+                <p class="text-gray-600 text-sm font-sans ml-7">125 years of inflection points mapped chronologically</p>
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-gray-900 py-10">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+        <div class="gradient-line max-w-xs mx-auto mb-6"></div>
+        <p class="text-gray-600 text-sm font-mono">The Moral Decline of America &mdash; A Genesis-to-Quantum Investigation</p>
+    </div>
+</footer>
+
+<script src="/glossary-linker.js" defer></script>
+<section class="ring-nav">
+  <div class="ring-header">
+    <h2>Related Work</h2>
+    <p>Core article, supporting evidence, and broader context</p>
+  </div>
+  <div class="ring-tier ring-1 open">
+    <div class="ring-tier-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="ring-tier-dot"></div>
+      <span class="ring-tier-label">Ring 1 — This Article</span>
+      <span class="ring-tier-desc">The core argument</span>
+      <i class="fas fa-chevron-right ring-tier-chevron"></i>
+    </div>
+    <div class="ring-tier-cards"><p class="ring-empty">You are here.</p></div>
+  </div>
+  <div class="ring-tier ring-2">
+    <div class="ring-tier-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="ring-tier-dot"></div>
+      <span class="ring-tier-label">Ring 2 — Supporting Evidence</span>
+      <span class="ring-tier-desc">Deeper dives and formal treatments</span>
+      <i class="fas fa-chevron-right ring-tier-chevron"></i>
+    </div>
+    <div class="ring-tier-cards"><p class="ring-empty">No connections mapped yet.</p></div>
+  </div>
+  <div class="ring-tier ring-3">
+    <div class="ring-tier-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="ring-tier-dot"></div>
+      <span class="ring-tier-label">Ring 3 — Broader Context</span>
+      <span class="ring-tier-desc">Related topics across the framework</span>
+      <i class="fas fa-chevron-right ring-tier-chevron"></i>
+    </div>
+    <div class="ring-tier-cards"><p class="ring-empty">No connections mapped yet.</p></div>
+  </div>
+</section>
+<!-- BEGIN:COMPONENT:script:audio-pill-player -->
+<script>
+/* CODEX_MDA_CUSTOM_PILL_AUDIO_20260517 */
+(function(){
+  function formatTime(seconds){
+    if (!Number.isFinite(seconds)) return "0:00";
+    var minutes = Math.floor(seconds / 60);
+    var secs = Math.floor(seconds % 60);
+    return minutes + ":" + String(secs).padStart(2,"0");
+  }
+  function setPlayIcon(button, isPlaying){
+    button.innerHTML = '<i class="fas fa-' + (isPlaying ? 'pause' : 'play') + '"></i>';
+  }
+  document.querySelectorAll('[data-component="audio"][data-name="audio-pill-player"]').forEach(function(player){
+    var audio = player.querySelector(".native-audio");
+    var playBtn = player.querySelector(".play-btn");
+    var muteBtn = player.querySelector(".mute-btn");
+    var fill = player.querySelector(".fill");
+    var track = player.querySelector(".track");
+    var currentTime = player.querySelector(".current-time");
+    var duration = player.querySelector(".duration");
+    var playerKind = player.querySelector(".player-kind");
+    var playerTitle = player.querySelector(".player-title");
+    var playerDesc = player.querySelector(".player-desc");
+    var activeMode = "read";
+    function selectPill(pill){
+      if (!pill) return;
+      var wasPlaying = audio && !audio.paused;
+      activeMode = pill.dataset.mode || "read";
+      player.style.setProperty("--active", pill.dataset.color || "#d4af37");
+      player.style.setProperty("--active-rgb", pill.dataset.rgb || "212,175,55");
+      player.querySelectorAll(".mode-pill").forEach(function(item){ item.classList.toggle("active", item === pill); });
+      playerKind.textContent = pill.dataset.label || pill.textContent.trim();
+      playerTitle.textContent = pill.dataset.title || "Audio mode";
+      playerDesc.textContent = pill.dataset.desc || "";
+      audio.pause(); audio.removeAttribute("src"); audio.innerHTML = "";
+      if (pill.dataset.src) {
+        var source = document.createElement("source");
+        source.src = pill.dataset.src;
+        source.type = pill.dataset.type || "audio/mpeg";
+        audio.appendChild(source);
+      }
+      audio.load();
+      fill.style.width = "0%"; currentTime.textContent = "0:00"; duration.textContent = "0:00";
+      setPlayIcon(playBtn, false);
+      if (wasPlaying && pill.dataset.src) audio.play().then(function(){ setPlayIcon(playBtn, true); }).catch(function(){ setPlayIcon(playBtn, false); });
+    }
+    player.querySelectorAll(".mode-pill").forEach(function(pill){ pill.addEventListener("click", function(){ selectPill(pill); }); });
+    playBtn.addEventListener("click", function(){
+      var active = player.querySelector('.mode-pill[data-mode="' + activeMode + '"]');
+      if (!active || !active.dataset.src) {
+        playerDesc.textContent = "No audio file is wired for this mode yet. Drop in a direct MP3/M4A/WAV/OGG URL later and the player will pick it up.";
+        return;
+      }
+      if (audio.paused) audio.play().then(function(){ setPlayIcon(playBtn, true); }).catch(function(){ setPlayIcon(playBtn, false); });
+      else { audio.pause(); setPlayIcon(playBtn, false); }
+    });
+    muteBtn.addEventListener("click", function(){
+      audio.muted = !audio.muted;
+      muteBtn.innerHTML = '<i class="fas fa-volume-' + (audio.muted ? 'mute' : 'up') + '"></i>';
+    });
+    track.addEventListener("click", function(event){
+      if (!audio.duration) return;
+      var rect = track.getBoundingClientRect();
+      audio.currentTime = ((event.clientX - rect.left) / rect.width) * audio.duration;
+    });
+    audio.addEventListener("loadedmetadata", function(){ duration.textContent = formatTime(audio.duration); });
+    audio.addEventListener("timeupdate", function(){
+      currentTime.textContent = formatTime(audio.currentTime);
+      if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + "%";
+    });
+    audio.addEventListener("ended", function(){ setPlayIcon(playBtn, false); });
+    selectPill(player.querySelector(".mode-pill.active") || player.querySelector(".mode-pill"));
+  });
+})();
+</script>
+<!-- END:COMPONENT:script:audio-pill-player -->
+
+<script src="files/mda-browser-tts.js?v=20260529" defer></script>
+</body>
+</html>
+
+
+

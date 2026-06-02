@@ -1,0 +1,1129 @@
+﻿<!DOCTYPE html>
+<!--
+  PAGE_META
+  series: mda
+  article: mda-048-ordnung-algorithm-the-mechanism
+  title: The Ordnung Algorithm
+  section: amish-and-case-studies
+  status: production
+  template: mda-evidence-v3
+  marked_by: opus-audit-repair
+  marked_date: 2026-05-31
+  source: MDA-048-ordnung-algorithm-THE-MECHANISM.html
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ordnung Algorithm | Moral Decline of America</title>
+<meta name="description" content="This report presents a comprehensive structural analysis of the Old Order Amish Ordnung, validating the hypothesis that this unwritten code functions...">
+<link rel="canonical" href="https://faiththruphysics.com/moral-decline/05-amish-and-case-studies/MDA-048-ordnung-algorithm-THE-MECHANISM.html">
+
+<meta property="og:title" content="The Ordnung Algorithm | Moral Decline of America">
+<meta property="og:description" content="This report presents a comprehensive structural analysis of the Old Order Amish Ordnung, validating the hypothesis that this unwritten code functions...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://faiththruphysics.com/moral-decline/05-amish-and-case-studies/MDA-048-ordnung-algorithm-THE-MECHANISM.html">
+<meta property="og:image" content="https://faiththruphysics.com/images/moral-decline-og.png">
+<meta property="og:site_name" content="Faith Through Physics">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Ordnung Algorithm | Moral Decline of America">
+<meta name="twitter:description" content="This report presents a comprehensive structural analysis of the Old Order Amish Ordnung, validating the hypothesis that this unwritten code functions...">
+<meta name="twitter:image" content="https://faiththruphysics.com/images/moral-decline-og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                dark: '#050505',
+                card: '#0a0a0a',
+                cardHover: '#111111',
+                accent: '#dc2626',
+                accentDim: '#991b1b',
+                amber: '#f59e0b',
+                amberDim: '#b45309',
+            },
+            fontFamily: {
+                serif: ['Crimson Text', 'Georgia', 'serif'],
+                sans: ['Inter', 'system-ui', 'sans-serif'],
+                display: ['Oswald', 'Impact', 'sans-serif'],
+                mono: ['JetBrains Mono', 'monospace'],
+            }
+        }
+    }
+}
+</script>
+<style>
+    html { scroll-behavior: smooth; }
+    body { background-color: #050505; }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #050505; }
+    ::-webkit-scrollbar-thumb { background: #991b1b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #dc2626; }
+
+    .gradient-line {
+        height: 3px;
+        background: linear-gradient(90deg, #991b1b, #dc2626, #f59e0b, #dc2626, #991b1b);
+    }
+    .hero-gradient {
+        background: radial-gradient(ellipse at 50% 0%, rgba(220,38,38,0.08) 0%, transparent 60%);
+    }
+    .pullquote {
+        border-left: 3px solid #dc2626;
+        background: linear-gradient(90deg, rgba(220,38,38,0.05), transparent);
+    }
+    .data-callout {
+        border: 1px solid rgba(245,158,11,0.2);
+        background: linear-gradient(135deg, rgba(245,158,11,0.03), transparent);
+    }
+    .stat-glow {
+        box-shadow: 0 0 20px rgba(220,38,38,0.1), inset 0 1px 0 rgba(245,158,11,0.1);
+    }
+
+    .prose-body p {
+        font-family: 'Crimson Text', Georgia, serif;
+        font-size: 1.25rem;
+        line-height: 1.85;
+        color: #d1d5db;
+        margin-bottom: 1.5rem;
+    }
+    .prose-body strong {
+        color: #f9fafb;
+        font-weight: 600;
+    }
+    .prose-body em {
+        color: #e5e7eb;
+    }
+
+    .section-divider {
+        border: none;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(220,38,38,0.3), rgba(245,158,11,0.2), rgba(220,38,38,0.3), transparent);
+        margin: 3rem 0;
+    }
+
+    .equation-block {
+        background: linear-gradient(135deg, rgba(220,38,38,0.05), rgba(245,158,11,0.03));
+        border: 1px solid rgba(220,38,38,0.15);
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    .series-card {
+        background: #0a0a0a;
+        border: 1px solid rgba(255,255,255,0.05);
+        transition: all 0.3s ease;
+    }
+    .series-card:hover {
+        background: #111111;
+        border-color: rgba(220,38,38,0.3);
+    }
+
+    .rule-table { width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 0.85rem; }
+    .rule-table th { background: rgba(220,38,38,0.08); color: #f9fafb; text-align: left; padding: 0.85rem 1rem; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.7rem; border-bottom: 1px solid rgba(220,38,38,0.25); }
+    .rule-table td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: #d1d5db; vertical-align: top; }
+    .rule-table tr:last-child td { border-bottom: none; }
+    .rule-table td:first-child { color: #f59e0b; font-weight: 600; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; }
+</style>
+<script defer src="https://analytics.faiththruphysics.com/script.js" data-website-id="2f2e3a0f-e8e5-4900-a1e0-1b33592403ee"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>
+.ring-nav{margin:4rem auto;max-width:1100px;padding:3rem 1.5rem;}
+.ring-nav .ring-header{text-align:center;margin-bottom:2.5rem;}
+.ring-nav .ring-header h2{font-family:'Oswald',sans-serif;font-size:1.6rem;color:var(--highlight,#d4af37);text-transform:uppercase;letter-spacing:3px;margin-bottom:.5rem;}
+.ring-nav .ring-header p{color:var(--text-secondary,#a0a0a0);font-size:.9rem;}
+.ring-tier{border:1px solid var(--border,#333);border-radius:8px;margin-bottom:1rem;overflow:hidden;}
+.ring-tier-header{display:flex;align-items:center;gap:.75rem;padding:1rem 1.25rem;cursor:pointer;transition:background .2s;}
+.ring-tier-header:hover{background:rgba(255,255,255,0.03);}
+.ring-tier-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.ring-1 .ring-tier-dot{background:#d4af37;}
+.ring-2 .ring-tier-dot{background:#4a9eff;}
+.ring-3 .ring-tier-dot{background:#8b7fc2;}
+.ring-tier-label{font-family:'Oswald',sans-serif;font-size:.85rem;text-transform:uppercase;letter-spacing:2px;color:var(--text-primary,#e0e0e0);}
+.ring-tier-desc{color:var(--text-secondary,#a0a0a0);font-size:.8rem;margin-left:auto;}
+.ring-tier-chevron{color:var(--text-secondary,#a0a0a0);font-size:.7rem;transition:transform .3s;margin-left:.5rem;}
+.ring-tier.open .ring-tier-chevron{transform:rotate(90deg);}
+.ring-tier-cards{display:none;padding:1rem 1.25rem;}
+.ring-tier.open .ring-tier-cards{display:block;}
+.ring-empty{color:#666;font-size:.85rem;font-style:italic;}
+</style>
+<style>
+/* ===== COMPONENT:audio:audio-pill-player | CODEX_MDA_CUSTOM_PILL_AUDIO_20260517 ===== */
+.mda-audio-player{
+  --active:#d4af37;
+  --active-rgb:212,175,55;
+  position:relative;
+  overflow:hidden;
+  margin:1.35rem 0 2rem;
+  border:1px solid rgba(var(--active-rgb),.42);
+  border-radius:.9rem;
+  background:linear-gradient(135deg,rgba(var(--active-rgb),.13),rgba(24,24,24,.96) 44%,rgba(8,8,8,.98));
+  box-shadow:0 24px 80px rgba(0,0,0,.36),0 0 44px rgba(var(--active-rgb),.09);
+  transition:border-color .25s ease,box-shadow .25s ease,background .25s ease;
+}
+.mda-audio-player::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto;
+  height:3px;
+  background:linear-gradient(90deg,transparent,var(--active),transparent);
+}
+.mda-audio-player .pill-row{display:flex;flex-wrap:wrap;gap:.65rem;padding:1.05rem 1.15rem .3rem;}
+.mda-audio-player .mode-pill{
+  display:inline-flex;align-items:center;gap:.45rem;min-height:34px;
+  border:1px solid rgba(255,255,255,.13);border-radius:999px;padding:.05rem .85rem 0;
+  background:rgba(0,0,0,.2);color:#b8b8b8;font-family:"JetBrains Mono",monospace;
+  font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  cursor:pointer;transition:all .2s ease;
+}
+.mda-audio-player .mode-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--pill-color);box-shadow:0 0 12px rgba(var(--pill-rgb),.45);}
+.mda-audio-player .mode-pill:hover{color:#fff;border-color:var(--pill-color);background:rgba(var(--pill-rgb),.12);}
+.mda-audio-player .mode-pill.active{color:var(--pill-color);border-color:var(--pill-color);background:rgba(var(--pill-rgb),.16);}
+.mda-audio-player .mode-pill.unavailable{opacity:.38;cursor:pointer;}
+.mda-audio-player .mode-pill.unavailable:hover{color:#b8b8b8;background:rgba(0,0,0,.2);}
+.mda-audio-player .player-body{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;padding:1rem 1.15rem 1.15rem;}
+.mda-audio-player .play-btn{width:58px;height:58px;border-radius:50%;border:2px solid var(--active);background:rgba(var(--active-rgb),.1);color:var(--active);display:grid;place-items:center;cursor:pointer;font-size:1.1rem;transition:all .2s ease;}
+.mda-audio-player .play-btn:hover{background:rgba(var(--active-rgb),.18);transform:translateY(-1px);}
+.mda-audio-player .track-area{min-width:0;}
+.mda-audio-player .player-label{display:flex;flex-wrap:wrap;align-items:center;gap:.65rem;margin-bottom:.55rem;}
+.mda-audio-player .player-kind{font-family:"JetBrains Mono",monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--active);}
+.mda-audio-player .player-title{font-weight:800;color:#fff;letter-spacing:.01em;}
+.mda-audio-player .player-desc{color:var(--text-muted,#a7a7a7);font-size:.88rem;line-height:1.45;margin:0 0 .75rem;}
+.mda-audio-player .track{position:relative;height:8px;border-radius:999px;background:#262626;cursor:pointer;overflow:hidden;}
+.mda-audio-player .fill{height:100%;width:0%;border-radius:inherit;background:linear-gradient(90deg,var(--active),rgba(var(--active-rgb),.55));}
+.mda-audio-player .time-row{display:flex;justify-content:space-between;margin-top:.42rem;color:#777;font-family:"JetBrains Mono",monospace;font-size:.68rem;}
+.mda-audio-player .right-controls{display:flex;align-items:center;gap:.6rem;}
+.mda-audio-player .icon-btn{width:36px;height:36px;border:1px solid rgba(255,255,255,.12);border-radius:50%;background:rgba(0,0,0,.14);color:#aaa;cursor:pointer;}
+.mda-audio-player .icon-btn:hover{color:var(--active);border-color:var(--active);}
+.mda-audio-player .native-audio{display:none;}
+@media(max-width:720px){
+  .mda-audio-player .player-body{grid-template-columns:auto 1fr;}
+  .mda-audio-player .right-controls{grid-column:1/-1;justify-content:flex-end;}
+  .mda-audio-player .play-btn{width:50px;height:50px;}
+}
+</style>
+
+<style>
+.mda-proof-panel{max-width:56rem;margin:1.5rem auto 3rem;padding:0 1.5rem;}
+.mda-proof-panel-inner{border:1px solid rgba(212,175,55,.28);background:rgba(10,10,10,.78);padding:1.25rem;border-radius:6px;}
+.mda-proof-eyebrow{font-family:Inter,system-ui,sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#d4af37;margin-bottom:.45rem;}
+.mda-proof-panel h2{font-family:Oswald,Impact,sans-serif;font-size:1.25rem;letter-spacing:.04em;text-transform:uppercase;color:#f8fafc;margin:0 0 1rem;}
+.mda-proof-claim{border-top:1px solid rgba(255,255,255,.08);padding-top:1rem;margin-top:1rem;}
+.mda-proof-claim:first-of-type{border-top:0;padding-top:0;margin-top:0;}
+.mda-proof-claim-kicker{font-family:Inter,system-ui,sans-serif;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#f59e0b;margin-bottom:.35rem;}
+.mda-proof-claim p{font-family:Crimson Text,Georgia,serif;font-size:1.05rem;line-height:1.7;color:#e5e7eb;margin:0;}
+</style>
+<link rel="stylesheet" href="assets/css/ring-nav.css">
+<link rel="stylesheet" href="assets/css/audio-player.css">
+<script src="assets/js/audio-player.js" defer></script>
+</head>
+<body class="text-gray-300 font-serif">
+<nav style="position:sticky;top:0;z-index:1000;background:#0a0a0a;border-bottom:1px solid #222;padding:.5rem 1.5rem;display:flex;align-items:center;justify-content:space-between;font-family:'Inter',sans-serif;font-size:.8rem;">
+  <div style="display:flex;gap:1rem;align-items:center;">
+    <a href="/index.html" style="color:#999;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#ef4444'" onmouseout="this.style.color='#999'"><i class="fas fa-home" style="margin-right:.35rem;font-size:.65rem;"></i>Home Home</a>
+  </div>
+  <div style="display:flex;gap:1rem;align-items:center;">
+    <a href="MDA-047-amish-tech-filter-THE-FILTER.html" style="color:#999;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#ef4444'" onmouseout="this.style.color='#999'"><i class="fas fa-arrow-left" style="margin-right:.35rem;font-size:.65rem;"></i>Previous</a>
+    <span style="color:#333;">|</span>
+    <a href="MDA-049-coherence-factory-THE-SYNTHESIS.html" style="color:#999;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#ef4444'" onmouseout="this.style.color='#999'">Next<i class="fas fa-arrow-right" style="margin-left:.35rem;font-size:.65rem;"></i></a>
+  </div>
+  <div style="display:flex;gap:1rem;align-items:center;">
+    <a href="index.html" style="color:#ef4444;text-decoration:none;font-weight:500;transition:color .2s;" onmouseover="this.style.color='#f87171'" onmouseout="this.style.color='#ef4444'"><i class="fas fa-th-list" style="margin-right:.35rem;font-size:.65rem;"></i>Series Home</a>
+  </div>
+</nav>
+
+
+
+
+<!-- Top Navigation -->
+
+
+<!-- Hero -->
+<!-- BEGIN:COMPONENT:reader-mode:reader-mode-bar -->
+<section class="mda-reader-mode-wrap" data-component="reader-mode" data-name="reader-mode-bar">
+  <div class="mda-reader-mode-bar">
+    <div class="mda-reader-mode-top">
+      <span style="color:#f59e0b;">Reader Mode</span>
+      <span data-reader-mode-state>Standard active</span>
+    </div>
+    <div class="mda-reader-mode-tabs" role="tablist" aria-label="Reader modes">
+      <button class="mda-reader-mode-btn" type="button" data-reader-mode="easy" aria-selected="false">
+        <span class="mda-reader-mode-label">Easy</span>
+        <span class="mda-reader-mode-note">Plain-language bridge</span>
+      </button>
+      <button class="mda-reader-mode-btn active" type="button" data-reader-mode="standard" aria-selected="true">
+        <span class="mda-reader-mode-label">Standard</span>
+        <span class="mda-reader-mode-note">Current article</span>
+      </button>
+      <button class="mda-reader-mode-btn" type="button" data-reader-mode="academic" aria-selected="false">
+        <span class="mda-reader-mode-label">Academic</span>
+        <span class="mda-reader-mode-note">Method + caveats</span>
+      </button>
+      <button class="mda-reader-mode-btn" type="button" data-reader-mode="proof" aria-selected="false">
+        <span class="mda-reader-mode-label">Proof</span>
+        <span class="mda-reader-mode-note">Proof pressure</span>
+      </button>
+    </div>
+    <div class="mda-reader-mode-status" data-reader-mode-message>
+      <strong>Standard</strong> is the live article. Easy and Academic are reserved surfaces. <strong>Proof</strong> opens the evidence and derivation layer.
+    </div>
+  </div>
+</section>
+<!-- END:COMPONENT:reader-mode:reader-mode-bar -->
+<!-- BEGIN:COMPONENT:reader-mode:proof-panel -->
+<section class="mda-proof-panel" data-reader-panel="proof" style="display:none;">
+  <div class="mda-proof-panel-inner">
+    <div class="mda-proof-eyebrow">Proof Pressure Layer</div>
+    <h2>Vetted Claims for MDA-048-ordnung-algorithm-THE-MECHANISM</h2>
+    <article class="mda-proof-claim">
+  <div class="mda-proof-claim-kicker">No promoted claim</div>
+  <p>No claim from this article survived the deterministic Axiom + 7Q gate strongly enough for the proof layer yet.</p>
+</article>
+  </div>
+</section>
+<!-- END:COMPONENT:reader-mode:proof-panel -->
+
+
+<header class="hero-gradient pt-36 pb-16">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="inline-block mb-6">
+            <span class="font-mono text-xs tracking-[0.3em] uppercase text-accent/70 border border-accent/20 px-4 py-1.5 rounded-full">
+                Amish Series &bull; 09e &bull; Coherence Factory
+            </span>
+        </div>
+        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-4">The Ordnung Algorithm</h1>
+
+        <p class="text-xl md:text-2xl text-gray-400 font-light max-w-2xl mx-auto leading-relaxed mb-2">A structural validation of the Amish System-Preservation Algorithm</p>
+        <p class="text-lg text-gray-500 italic mb-6">Seven structural rules. One Technological Axiom of Distance. One coherence factory.</p>
+        <p class="font-sans text-sm text-gray-600 tracking-wide">
+            David Lowe &bull; Theophysics Institute
+        </p>
+    </div>
+    <div class="gradient-line mt-12 max-w-4xl mx-auto"></div>
+</header>
+
+<main class="max-w-4xl mx-auto px-6 py-12">
+
+    <!-- Executive Summary -->
+    <section class="mb-12">
+        <div class="flex items-center gap-4 mb-8">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                <i class="fas fa-flag text-accent text-sm"></i>
+            </div>
+            <h2 class="font-display text-2xl font-semibold text-white tracking-wide uppercase">Executive Summary</h2>
+        </div>
+
+        <div class="prose-body">
+            <p>
+                This report presents a comprehensive structural analysis of the Old Order Amish <em>Ordnung</em>, validating the hypothesis that this unwritten code functions not merely as a religious discipline, but as a sophisticated <strong>System-Preservation Algorithm</strong>. By applying the lenses of systems theory, cybernetics, and information entropy to the sociological and technological practices of the Amish, we isolate the governing logic of their society: the <strong>Technological Axiom of Distance</strong>.
+            </p>
+            <p>
+                The investigation draws upon extensive research data, ranging from the mechanics of pneumatic tools and the physics of 12-volt direct current (DC) electrical systems to the sociology of mutual aid and the geography of the horse-drawn buggy. The analysis strips away the theological vernacular typically used to describe Amish life — terms such as <em>Demut</em> (humility) or <em>Gelassenheit</em> (yieldedness) — and replaces them with functionalist nomenclature. In doing so, we reveal the Amish community as a <strong>"Coherence Factory,"</strong> a system designed to manufacture and maintain high levels of social density by systematically filtering "Information Entropy."
+            </p>
+            <p>The report validates seven distinct <strong>Structural Rules</strong> derived from the core Axiom:</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-10">
+            <div class="data-callout rounded-xl p-5"><div class="font-mono text-xs text-amber/80 mb-1">RULE 1</div><div class="font-display font-semibold text-white text-sm uppercase tracking-wide">The Proximity Limit</div><p class="text-xs text-gray-400 mt-2">Spatial constraint enforcing a high-fidelity local network topology.</p></div>
+            <div class="data-callout rounded-xl p-5"><div class="font-mono text-xs text-amber/80 mb-1">RULE 2</div><div class="font-display font-semibold text-white text-sm uppercase tracking-wide">The Friction Requirement</div><p class="text-xs text-gray-400 mt-2">Thermodynamic filter preventing seamless backgrounding of technology.</p></div>
+            <div class="data-callout rounded-xl p-5"><div class="font-mono text-xs text-amber/80 mb-1">RULE 3</div><div class="font-display font-semibold text-white text-sm uppercase tracking-wide">The Anti-Bypass Rule</div><p class="text-xs text-gray-400 mt-2">Topology restraint forbidding direct connections to external critical infrastructure.</p></div>
+            <div class="data-callout rounded-xl p-5"><div class="font-mono text-xs text-amber/80 mb-1">RULE 4</div><div class="font-display font-semibold text-white text-sm uppercase tracking-wide">The Sanctuary Boundary</div><p class="text-xs text-gray-400 mt-2">Spatial protocol protecting the domestic sphere from the attention economy.</p></div>
+            <div class="data-callout rounded-xl p-5"><div class="font-mono text-xs text-amber/80 mb-1">RULE 5</div><div class="font-display font-semibold text-white text-sm uppercase tracking-wide">The Mutual Aid Imperative</div><p class="text-xs text-gray-400 mt-2">Economic logic that rejects indemnity in favor of interdependence.</p></div>
+            <div class="data-callout rounded-xl p-5"><div class="font-mono text-xs text-amber/80 mb-1">RULE 6</div><div class="font-display font-semibold text-white text-sm uppercase tracking-wide">The Finite Input Rule</div><p class="text-xs text-gray-400 mt-2">Resource heuristic that privileges metered over unmetered flows.</p></div>
+            <div class="data-callout rounded-xl p-5 md:col-span-2"><div class="font-mono text-xs text-amber/80 mb-1">RULE 7</div><div class="font-display font-semibold text-white text-sm uppercase tracking-wide">The Ownership Distinction</div><p class="text-xs text-gray-400 mt-2">Boundary condition separating the utility of a tool from the habitus of the user.</p></div>
+        </div>
+
+        <div class="prose-body">
+            <p>
+                Through a rigorous examination of these rules, this report argues that the Amish have successfully engineered a sociological <strong>"membrane"</strong> — a selective filter that permits the exchange of matter and energy with the outside world while blocking the ingress of "structural effects" that would dissolve the community's internal coherence.
+            </p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Chapter 1 -->
+    <section class="mb-12">
+        <div class="flex items-center gap-4 mb-8">
+            <div class="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center">
+                <i class="fas fa-atom text-amber text-sm"></i>
+            </div>
+            <h2 class="font-display text-2xl font-semibold text-white tracking-wide uppercase">Chapter 1 · Entropy, Coherence &amp; The Technological Axiom</h2>
+        </div>
+
+        <div class="prose-body">
+            <p>
+                To understand the Amish <em>Ordnung</em> as a survival algorithm, it is necessary to first define the environmental conditions against which it operates. The modern world, characterized by what sociologists and geographers term "time-space compression," functions as a high-entropy environment. In systems theory, entropy refers to the tendency of a closed system to move toward disorder, homogeneity, and a loss of distinct structure. In a sociological context, "Information Entropy" manifests as the dissolution of local culture into global "noise," the fragmentation of social bonds due to competing attention vectors, and the erosion of unique community identity.
+            </p>
+            <p>
+                The external world — the "English" society — is driven by an imperative of acceleration. Information flows are unmetered, connections are ubiquitous yet weak, and the boundary between the "self" and the global "network" is increasingly porous. This state is defined by "velocity," a critical value in social mechanics. When the velocity of information and physical movement exceeds a certain threshold, the "coherence" of the local social node disintegrates. The individual becomes atomized, connected to everyone in the abstract but dependent on no one in the particular.
+            </p>
+            <p>
+                For a high-coherence system like the Amish community to survive within this high-entropy/high-velocity environment, it must maintain a rigid <strong>membrane</strong> — a selective filter that regulates the flow of energy, information, and influence. This report identifies the <em>Ordnung</em> as the software that governs this membrane.
+            </p>
+        </div>
+
+        <h3 class="font-display text-lg font-semibold text-accent uppercase tracking-wide mt-10 mb-4">1.1 The Technological Axiom of Distance</h3>
+        <div class="prose-body">
+            <p>
+                The core logic driving this membrane is the <strong>Technological Axiom of Distance</strong>. This axiom posits that the health of a social system is inversely proportional to the technological ease with which its members can bypass local interaction. Standard Western modernity engineers technology to <em>eliminate</em> distance and friction. The goal is to make the far near and the difficult easy, effectively shrinking the world to the size of a screen.
+            </p>
+            <p>
+                The Amish algorithm inverts this. It artificially <em>imposes</em> distance and friction to ensure that interactions remain high-cost and, therefore, high-value. This is not Luddism, which is a reactionary rejection of machinery; rather, it is a calculated <strong>Coherence Metric</strong>. The Amish intuitively understand that "frictionless" interaction leads to "frictionless" abandonment. By maintaining the cost of interaction, the system ensures that social bonds are not treated as disposable commodities.
+            </p>
+            <p>
+                Research into the "Substitution Principle" in economic geography provides a critical counter-model. In the secular economy, the principle suggests that firms substitute capital (technology) for labor to maximize efficiency. If a machine is cheaper than a man, the machine replaces the man. The Amish algorithm recognizes this principle as an existential threat. If a technology substitutes a machine for a human relationship — insurance replacing mutual aid, a car replacing a neighborly driver — it is rejected.
+            </p>
+        </div>
+
+        <h3 class="font-display text-lg font-semibold text-accent uppercase tracking-wide mt-10 mb-4">1.2 Coherence Metric: Inward vs. Outward Vectors</h3>
+        <div class="prose-body">
+            <p>
+                The algorithm optimizes for a specific variable: the <strong>Coherence Metric</strong>. This metric can be defined by the ratio of "Inward Attention Vectors" to "Outward Attention Vectors."
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+            <div class="bg-card rounded-xl p-6 border border-accent/20">
+                <h4 class="font-display text-sm text-accent uppercase tracking-wider mb-3"><i class="fas fa-arrow-up-right-from-square mr-2"></i>Outward Vectors</h4>
+                <p class="text-sm text-gray-400 leading-relaxed">Forces that pull attention, loyalty, and dependency toward the external world — the state, the global market, the media ecosystem. Public school. Electric grid. Television. Internet.</p>
+            </div>
+            <div class="bg-card rounded-xl p-6 border border-amber/20">
+                <h4 class="font-display text-sm text-amber uppercase tracking-wider mb-3"><i class="fas fa-arrows-to-circle mr-2"></i>Inward Vectors</h4>
+                <p class="text-sm text-gray-400 leading-relaxed">Forces that direct attention toward the local node — family, church district, immediate geography. Horse-drawn buggy. Pennsylvania Dutch. Barn raising. Localized school.</p>
+            </div>
+        </div>
+
+        <div class="prose-body">
+            <p>
+                The <em>Ordnung</em> functions as a filter for Information Entropy by maximizing Inward Vectors and minimizing Outward Vectors. It is a system of "Attention Economics" implemented long before the term became popular in Silicon Valley. Every technological rejection — from the car to the smartphone — can be mapped to its potential to generate an Outward Vector.
+            </p>
+        </div>
+
+        <h3 class="font-display text-lg font-semibold text-accent uppercase tracking-wide mt-10 mb-4">1.3 Velocity and the Governance of Time</h3>
+        <div class="prose-body">
+            <p>
+                A critical component of this framework is the regulation of <strong>Time</strong>. The research distinguishes between "Industrial Time" (linear, segmented, efficient) and "Amish Time" (rhythmic, agrarian, task-oriented). Industrial Time is high-velocity; it demands synchronization with the global clock. Amish Time is "slow" and "melismatic," a quality observed even in their singing styles which stretch syllables over extended durations.
+            </p>
+            <p>
+                This "slowness" is not a failure of modernization but a security feature. High-velocity systems are prone to rapid contagion — financial panics, viral trends, social contagions spread instantly. By imposing a "speed limit" on their entire civilization (via the Proximity Limit and the rejection of the car), the Amish create a "latency" that allows the community to process change without being overwhelmed by it. They exist in a state of <strong>Tempo-stasis</strong>, resisting the acceleration that characterizes the social entropy of the outside world.
+            </p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Chapter 2: Rule 1 -->
+    <section class="mb-12">
+        <div class="flex items-center gap-4 mb-8">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                <i class="fas fa-horse text-accent text-sm"></i>
+            </div>
+            <h2 class="font-display text-2xl font-semibold text-white tracking-wide uppercase">Chapter 2 · Rule 1 — The Proximity Limit</h2>
+        </div>
+
+        <div class="prose-body">
+            <p>
+                The first and most visible structural rule validated by the research is the <strong>Proximity Limit</strong>. This rule governs the physical scale of the community and acts as a hard cap on the network topology of the Amish church district.
+            </p>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">2.1 Geometry of the Horse as a Governor</h3>
+        <div class="prose-body">
+            <p>
+                The primary enforcer of the Proximity Limit is the horse and buggy. The horse functions structurally as a <strong>governor of velocity and range</strong>. Research indicates that the average Amish-owned horse and buggy travels within a radius of approximately <strong>20 miles</strong>. This is not merely a travel constraint; it is a <a href="/glossary/?term=boundary-condition" class="glossary-link" title="See glossary: boundary condition">boundary condition</a> for the community's social reality.
+            </p>
+            <p>
+                The horse imposes a biological limit on travel. It requires rest, water, and care. It travels at roughly 10 miles per hour. A member cannot simply "commute" 50 miles to a job, work an 8-hour shift, and return. The horse forces the economy to remain local. Amish labor crews and businesses operate within a strict 10-mile radius. This creates a <strong>spatial fidelity</strong> where the map of the community matches the territory of daily interaction.
+            </p>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">2.2 Preserving Dunbar's Number Through Geography</h3>
+        <div class="prose-body">
+            <p>
+                Evolutionary psychology suggests humans can maintain stable social relationships with approximately 150 people — Dunbar's Number. Modern transportation allows individuals to maintain loose, weak-tie networks spread over vast distances. This creates a "diffuse" social graph where the individual is connected to many but committed to few.
+            </p>
+            <p>
+                The Proximity Limit enforces a social density that aligns with Dunbar's Number. Because travel beyond the 20-mile limit requires significant friction (hiring an "Amish Taxi"), casual interaction with the outside world is discouraged. The church district — the fundamental unit of Amish society — is geographically defined by the number of families that can travel to a single farmhouse for Sunday service via horse. When the district grows too large for this geometry, it divides. This is biological reproduction (mitosis), not imperial expansion.
+            </p>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">2.3 The Structural Effect of "Slow"</h3>
+        <div class="prose-body">
+            <p>
+                The Proximity Limit imposes a low-velocity state. Amish singing is "slow and melismatic," often stretching a single song over twenty minutes. This slowness is a <strong>cadence of cohesion</strong>. It forces participants to synchronize their breathing and attention for extended periods, creating a deep resonance impossible in the soundbite culture of the English world.
+            </p>
+            <p>
+                By rejecting the car as a possession, the Amish reject the autonomy of high-velocity travel. A car owner is a sovereign individual who can leave at will. A buggy driver is a tethered member of a local node. Geography must remain a binding constraint. The Amish do not "overcome" distance; they inhabit it.
+            </p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Chapter 3: Rule 2 -->
+    <section class="mb-12">
+        <div class="flex items-center gap-4 mb-8">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                <i class="fas fa-wind text-accent text-sm"></i>
+            </div>
+            <h2 class="font-display text-2xl font-semibold text-white tracking-wide uppercase">Chapter 3 · Rule 2 — The Friction Requirement</h2>
+        </div>
+
+        <div class="prose-body">
+            <p>
+                The second structural rule dictates that labor and process must retain a certain level of physical difficulty or "friction" to ensure the human element is not rendered obsolete by the machine. This is most vividly illustrated in the Amish adoption of pneumatic (air-powered) tools over grid-electric tools — a phenomenon known as <strong>"Amish Electricity."</strong>
+            </p>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">3.1 The Pneumatic Compromise</h3>
+        <div class="prose-body">
+            <p>
+                To an outsider, an Amish workshop filled with the "ear-cracking racket" of power sanders and saws seems contradictory. If they reject electricity, why use tools that perform the same function?
+            </p>
+            <p>
+                The answer lies in the <strong>source</strong> and the <strong>friction</strong> of the energy.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+            <div class="bg-card rounded-xl p-6 border border-white/5">
+                <h4 class="font-display text-sm text-accent uppercase tracking-wider mb-3"><i class="fas fa-plug mr-2"></i>Grid Electricity</h4>
+                <p class="text-sm text-gray-400 leading-relaxed">Frictionless. Silent, invisible, infinite. Arrives instantly from a distant, unknown source. Connects the user to global infrastructure. Requires no effort to initiate.</p>
+            </div>
+            <div class="bg-card rounded-xl p-6 border border-amber/20">
+                <h4 class="font-display text-sm text-amber uppercase tracking-wider mb-3"><i class="fas fa-fire-flame-curved mr-2"></i>Pneumatic Power</h4>
+                <p class="text-sm text-gray-400 leading-relaxed">High-friction. Requires a large diesel engine to drive an air compressor. Loud, vibrates, requires physical fuel handling. Finite — limited by tank and generator capacity.</p>
+            </div>
+        </div>
+
+        <div class="prose-body">
+            <p>
+                The diesel generator acts as a <strong>local power plant</strong>. The Amish shop owner controls the means of energy production but bears the burden of its maintenance, noise, and fueling. This prevents the seamless integration of technology into the background of life. You cannot ignore a diesel engine; you can easily ignore a wall socket.
+            </p>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">3.2 Retrofitting as Hacker Culture</h3>
+        <div class="prose-body">
+            <p>
+                An entire cottage industry exists for retrofitting electrical tools to run on pneumatic power. Amish hackers buy heavy-duty appliances (blenders, saws, washing machines), strip out electric motors, and install air vanes. This serves a vital structural function: <strong>The Modification Phase</strong>.
+            </p>
+            <p>
+                Technology is not adopted out of the box. It must be disassembled, understood, and modified to fit community constraints. This strips technology of its "black box" nature. The Amish user is not a passive consumer of a magical device; they are an active master of a mechanical tool. The friction of retrofitting ensures that only tools deemed truly necessary are adopted. A frivolous gadget is unlikely to undergo the complex and expensive process of pneumatic conversion.
+            </p>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">3.3 The Friction Tax on Consumption</h3>
+        <div class="prose-body">
+            <p>
+                The rejection of the electric grid is often framed as a rejection of "worldliness." Structurally, it is a rejection of <strong>technological ease</strong>. Grid electricity makes power too easy; it allows for the proliferation of devices (TVs, radios, computers) that would otherwise require deliberate effort to power.
+            </p>
+            <p>
+                By mandating that power be generated pneumatically or hydraulically, the <em>Ordnung</em> imposes a Friction Tax on energy use. You will not run a television if you have to start a diesel generator to watch it. The Friction Requirement filters out low-value, high-entropy technological noise. Energy is expended only on productive labor — woodworking, farming — rather than consumptive leisure.
+            </p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Chapter 4: Rule 3 -->
+    <section class="mb-12">
+        <div class="flex items-center gap-4 mb-8">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                <i class="fas fa-network-wired text-accent text-sm"></i>
+            </div>
+            <h2 class="font-display text-2xl font-semibold text-white tracking-wide uppercase">Chapter 4 · Rule 3 — The Anti-Bypass Rule</h2>
+        </div>
+
+        <div class="prose-body">
+            <p>
+                The Anti-Bypass Rule deals with the <em>topology</em> of connection. No technology may be adopted if it allows a member to bypass the community's regulatory structures or physical boundaries. This is the core logic behind rejecting the public utility grid (electricity) and the public communication grid (internet/phone lines in the home).
+            </p>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">4.1 The Grid as a Vector of Influence</h3>
+        <div class="prose-body">
+            <p>
+                The electric grid is a physical tether to the outside world. It is an umbilical cord that feeds the home with energy, media, and influence from a centralized, non-Amish authority. If the grid enters the home, the Sanctuary Boundary is breached.
+            </p>
+        </div>
+
+        <div class="equation-block">
+            <p class="font-mono text-sm text-amber tracking-wider mb-2">VOLTAGE FIREWALL</p>
+            <p class="text-2xl text-white font-display">110V AC <span class="text-gray-600">vs.</span> <span class="text-amber">12V DC</span></p>
+            <p class="font-sans text-xs text-gray-500 mt-2">Standard of the outside world &nbsp; vs. &nbsp; Standard of the island</p>
+        </div>
+
+        <div class="prose-body">
+            <p>
+                <strong>110-volt AC (Grid Standard):</strong> The currency of the English consumer economy. Powers high-wattage appliances — microwaves, hair dryers, televisions, computers.
+            </p>
+            <p>
+                <strong>12-volt DC (Battery Standard):</strong> The voltage of the island. Powers lights, basic fans, specific tools. Cannot easily power the distractions of modern life without inefficient inverters.
+            </p>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">4.2 Inefficiency as a Feature</h3>
+        <div class="prose-body">
+            <p>
+                Converting 12V battery power to 110V AC is inefficient. It wastes energy and drains batteries quickly. In the secular world, this is a problem to be solved. In the Amish Coherence Factory, this inefficiency is a <strong>feature</strong>.
+            </p>
+            <p>
+                By standardizing on 12V DC, the Amish create a <strong>technical incompatibility</strong> with the mass consumer market. An Amish family cannot simply buy a standard toaster or TV at Walmart and plug it in. They are structurally blocked from plug-and-play consumer culture. To use a 110V appliance, they would need an inverter, which drains the finite battery, triggering the Finite Input Rule.
+            </p>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">4.3 The Battery as Finite Container</h3>
+        <div class="prose-body">
+            <p>
+                The grid offers an illusion of infinity — the lights never go out. A battery is finite. It runs out. It must be recharged. This finiteness forces the user to be conscious of consumption. It prevents the "backgrounding" of technology. No input — energy or information — can flow into the Amish home without a conscious, deliberate act of acquisition. The home remains an autonomous node, dependent on the community for support but independent of the state for sustenance.
+            </p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Chapter 5: Rule 4 -->
+    <section class="mb-12">
+        <div class="flex items-center gap-4 mb-8">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                <i class="fas fa-house-lock text-accent text-sm"></i>
+            </div>
+            <h2 class="font-display text-2xl font-semibold text-white tracking-wide uppercase">Chapter 5 · Rule 4 — The Sanctuary Boundary</h2>
+        </div>
+
+        <div class="prose-body">
+            <p>
+                The Sanctuary Boundary is the spatial application of the <em>Ordnung</em> to the domestic sphere. It designates the Home as a <strong>zero-entropy zone</strong>, protected from the intrusive vectors of the attention economy. The primary artifact validating this rule is the <strong>Telephone Shanty</strong>.
+            </p>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">5.1 The Logic of the Telephone Shanty</h3>
+        <div class="prose-body">
+            <p>
+                The phone itself is not evil; the <em>location</em> matters.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+            <div class="bg-card rounded-xl p-6 border border-accent/20">
+                <h4 class="font-display text-sm text-accent uppercase tracking-wider mb-3"><i class="fas fa-house-circle-xmark mr-2"></i>Phone in Home</h4>
+                <p class="text-sm text-gray-400 leading-relaxed">Breaks the sanctuary. Allows the outside world to interrupt the family dinner, the silence of the evening, or the flow of domestic life. Privileges the distant voice over the present face. Decontextualizes "visiting."</p>
+            </div>
+            <div class="bg-card rounded-xl p-6 border border-amber/20">
+                <h4 class="font-display text-sm text-amber uppercase tracking-wider mb-3"><i class="fas fa-house-chimney mr-2"></i>Phone in Shanty</h4>
+                <p class="text-sm text-gray-400 leading-relaxed">Preserves the sanctuary. The phone is a tool, not a member of the household. Located at a distance — often at the end of a lane or shared between families.</p>
+            </div>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">5.2 Distance as Filter for Triviality</h3>
+        <div class="prose-body">
+            <p>
+                The requirement to walk to the shanty imposes a transaction cost on communication. As one Amish member noted, <em>"If you walk a quarter mile, you don't use it as much."</em> The distance filters out trivial communication. You walk to the shanty for business or an emergency (high signal), not for idle gossip (high noise).
+            </p>
+            <p>
+                The shanty physically separates the informational space from the relational space. The Home remains a space for face-to-face interaction (high coherence), while the Shanty contains digital/electronic interaction (potential entropy). This spatial segregation prevents the "colonization" of the home by external information flows.
+            </p>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">5.3 The Threat of Decontextualized Visiting</h3>
+        <div class="prose-body">
+            <p>
+                In Amish culture, "visiting" is described as <strong>the national sport</strong>. It is a ritual of social bonding involving physical presence, travel, and shared time — high-bandwidth communication with non-verbal cues, shared meals, the physical environment.
+            </p>
+            <p>
+                A phone call strips away the context — body, travel, environment — and leaves only voice. It is a low-bandwidth substitute. The Sanctuary Boundary prevents this substitution. By banning the phone from the living room, the <em>Ordnung</em> forces members to engage in physical visiting if they want to maintain relationships. Social bonding remains physical, embodied — preserving the high-coherence social fabric against the virtualization of relationships.
+            </p>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">5.4 The "Fax in the Shanty" Anomaly</h3>
+        <div class="prose-body">
+            <p>
+                An Amish businessman operates a fax machine inside his phone shanty. When asked if the Bishop allows it, he replies, <em>"I AM the Bishop!"</em> The fax is permitted because it is contained within the shanty — a workspace boundary zone — not the home. It is a tool for economic interface, not domestic consumption.
+            </p>
+            <p>
+                The shanty acts as a <strong>DMZ</strong> (Demilitarized Zone) where the Amish can interact with the electronic world without letting it contaminate the Holy of Holies — the family table.
+            </p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Chapter 6: Rule 5 -->
+    <section class="mb-12">
+        <div class="flex items-center gap-4 mb-8">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                <i class="fas fa-handshake-angle text-accent text-sm"></i>
+            </div>
+            <h2 class="font-display text-2xl font-semibold text-white tracking-wide uppercase">Chapter 6 · Rule 5 — The Mutual Aid Imperative</h2>
+        </div>
+
+        <div class="prose-body">
+            <p>
+                The Mutual Aid Imperative is the economic cornerstone of the Coherence Factory. It dictates that <strong>risk must be socialized, not commercialized</strong>. This rule is validated by the strict ban on commercial insurance.
+            </p>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">6.1 Insurance as Disintegrating Force</h3>
+        <div class="prose-body">
+            <p>
+                Commercial insurance operates on indemnity: an individual pays a premium to a distant corporation so that if disaster strikes, they are made financially whole without needing to rely on their neighbors. It buys <em>independence</em>.
+            </p>
+            <p>
+                To the Amish algorithm, this independence is a critical failure mode. If a member does not need their neighbors to rebuild a barn after a fire, the bonds of community weaken. Insurance replaces the flesh-and-blood safety net with a contractual-financial safety net. It dissolves the glue that holds the community together.
+            </p>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">6.2 The Barn Raising as Coherence Ritual</h3>
+        <div class="prose-body">
+            <p>
+                The alternative to insurance is <strong>Mutual Aid</strong> — Amish Aid Plans, barn raisings. When a disaster occurs, the community mobilizes. This is not just charity; it is a structural necessity. The disaster becomes a mechanism for reinforcing social solidarity.
+            </p>
+            <p>
+                Amish liability aid certificates are explicitly <em>not</em> insurance contracts; they are promises of mutual assistance. They are not covered by state guaranty funds. This lack of legal certainty forces the member to rely entirely on the moral certainty of the community.
+            </p>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">6.3 The Ethos of Interdependence</h3>
+        <div class="prose-body">
+            <p>
+                The ban on commercial insurance ensures every member remains existentially tethered to the collective. You cannot afford to alienate your neighbors, because they are your fire insurance, your health insurance, and your social security.
+            </p>
+            <p>
+                Amish Hospital Aid pools resources to pay catastrophic medical bills, encouraging cost containment and community interdependence. The community negotiates with hospitals as a bloc, leveraging collective paying power. The system must reject any financial instrument that allows an individual to buy their way out of mutual dependency. The <em>Ordnung</em> structurally engineers a state of vulnerability that can only be resolved through community cohesion. <strong>The risk of the individual becomes the bond of the group.</strong>
+            </p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Chapter 7: Rule 6 -->
+    <section class="mb-12">
+        <div class="flex items-center gap-4 mb-8">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                <i class="fas fa-gauge-simple-high text-accent text-sm"></i>
+            </div>
+            <h2 class="font-display text-2xl font-semibold text-white tracking-wide uppercase">Chapter 7 · Rule 6 — The Finite Input Rule</h2>
+        </div>
+
+        <div class="prose-body">
+            <p>
+                The Finite Input Rule governs the flow of resources into the system. It posits that <strong>unlimited flows create unlimited appetites</strong>, leading to entropy. The system must impose artificial scarcity or "metering" on inputs like electricity, information, and speed.
+            </p>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">7.1 Metered vs. Unmetered Existence</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+            <div class="bg-card rounded-xl p-6 border border-accent/20">
+                <h4 class="font-display text-sm text-accent uppercase tracking-wider mb-3"><i class="fas fa-infinity mr-2"></i>Unmetered</h4>
+                <p class="text-sm text-gray-400 leading-relaxed">Encourages waste, passivity, and constant connection. The user forgets the cost of the resource. Leads to the hedonic treadmill where the luxury of today becomes the necessity of tomorrow.</p>
+            </div>
+            <div class="bg-card rounded-xl p-6 border border-amber/20">
+                <h4 class="font-display text-sm text-amber uppercase tracking-wider mb-3"><i class="fas fa-battery-quarter mr-2"></i>Metered</h4>
+                <p class="text-sm text-gray-400 leading-relaxed">Enforces discipline. The user is always aware that the resource is depleting. The battery light is blinking. The propane tank is getting light.</p>
+            </div>
+        </div>
+
+        <div class="prose-body">
+            <p>
+                The Amish rejection of "always-on" connection is a defense against the infinite scroll of modern culture. By relying on batteries and finite fuel supplies, the Amish maintain a psychological connection to the physical limits of the world. They live in a finite universe, which aligns with their theological view of creatureliness, whereas the English live in a techno-utopian illusion of infinite resources.
+            </p>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">7.2 The Solar Power Dilemma</h3>
+        <div class="prose-body">
+            <p>
+                Solar panels are allowed in many districts because they are stand-alone (anti-bypass) and local. However, the storage of that power (batteries) remains finite.
+            </p>
+            <p>
+                Some conservative Amish groups worry that massive solar arrays combined with efficient inverters mimic the grid too closely, providing "too much" power and violating the Finite Input Rule. If a farmer has enough solar to run a freezer, a dryer, and a computer, he has effectively recreated the grid. Thus, the <em>Ordnung</em> often regulates the <strong>capacity</strong> of the system — limiting the number of panels or strictly enforcing the 12V limit — to ensure the input remains effectively finite. The goal is to prevent the energy surplus that leads to social surplus (leisure time spent on non-communal activities).
+            </p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Chapter 8: Rule 7 -->
+    <section class="mb-12">
+        <div class="flex items-center gap-4 mb-8">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                <i class="fas fa-key text-accent text-sm"></i>
+            </div>
+            <h2 class="font-display text-2xl font-semibold text-white tracking-wide uppercase">Chapter 8 · Rule 7 — The Ownership Distinction</h2>
+        </div>
+
+        <div class="prose-body">
+            <p>
+                The Ownership Distinction creates a boundary condition regarding the relationship between user and tool. It allows <strong>access</strong> to a technology — using a taxi, using a neighbor's phone — while forbidding <strong>ownership</strong> (owning a car, owning a phone).
+            </p>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">8.1 The Taxi Compromise</h3>
+        <div class="prose-body">
+            <p>
+                Critics often call the use of "Amish Taxis" hypocrisy ("If the car is evil, why ride in it?"). The algorithm reveals it as a brilliant filter.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+            <div class="bg-card rounded-xl p-6 border border-accent/20">
+                <h4 class="font-display text-sm text-accent uppercase tracking-wider mb-3"><i class="fas fa-car mr-2"></i>Ownership of Car</h4>
+                <p class="text-sm text-gray-400 leading-relaxed">Transforms identity. Restructures time (spontaneous travel), budget (insurance, payments), status. Creates an autonomy vector. The owner becomes an individualist, capable of leaving the community at a whim.</p>
+            </div>
+            <div class="bg-card rounded-xl p-6 border border-amber/20">
+                <h4 class="font-display text-sm text-amber uppercase tracking-wider mb-3"><i class="fas fa-taxi mr-2"></i>Access to Taxi</h4>
+                <p class="text-sm text-gray-400 leading-relaxed">Retains the utility of the car (distant funeral, hospital) but strips autonomy. Expensive, requires planning, involves a third party. A friction-heavy mode of transport.</p>
+            </div>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">8.2 Possession Changes the Habitus</h3>
+        <div class="prose-body">
+            <p>
+                <em>Possessing</em> a technology changes the human <strong>habitus</strong> — ingrained habits and dispositions. A car owner thinks like a motorist; a taxi passenger remains a buggy driver who is temporarily borrowing speed. This rule allows the Amish to interact with the modern economy (buying supplies, visiting doctors) without becoming <em>of</em> the modern economy. They surf the wave of modernity without drowning in it.
+            </p>
+        </div>
+
+        <h3 class="font-display text-base font-semibold text-amber uppercase tracking-wider mt-8 mb-4">8.3 Business Exception &amp; Technological Dualism</h3>
+        <div class="prose-body">
+            <p>
+                Amish businesses may use higher levels of technology (computers, fax machines, hydraulic manufacturing systems) in the shop than are allowed in the home. The Shop is a border zone where the Amish interface with the World. The Home is the sanctuary. The Ownership Distinction allows for <strong>technological dualism</strong> — high-tech production, low-tech consumption.
+            </p>
+            <p>
+                The shop owner may "own" the pneumatic CNC router, but he does not "possess" it in his domestic life. The distinction prevents the logic of the market (efficiency) from bleeding into the logic of the home (discipleship).
+            </p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Chapter 9 -->
+    <section class="mb-12">
+        <div class="flex items-center gap-4 mb-8">
+            <div class="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center">
+                <i class="fas fa-chart-pie text-amber text-sm"></i>
+            </div>
+            <h2 class="font-display text-2xl font-semibold text-white tracking-wide uppercase">Chapter 9 · Validating the Algorithm</h2>
+        </div>
+
+        <div class="prose-body">
+            <p>
+                The seven structural rules do not operate in isolation. They form a composite <strong>Coherence Metric</strong> — a set of variables that the Amish leadership intuitively monitor to assess the health of the community.
+            </p>
+            <p>
+                The primary metric being optimized is the <strong>Attention Vector</strong>. Outward Vectors (TV, Grid, Internet, Car, Public School) pull the individual's gaze toward the global market and the state, creating Social Diffusion that spreads the community thin. Inward Vectors (Buggy, Mutual Aid, Pennsylvania Dutch, Local School, Visiting) direct the gaze toward the neighbor and the church. The <em>Ordnung</em> functions to maximize the Inward Vector and minimize the Outward Vector. Every rule — from the shanty to the pneumatic drill — bends the attention vector back toward the community.
+            </p>
+        </div>
+
+        <div class="data-callout rounded-xl p-6 stat-glow my-10">
+            <p class="font-mono text-xs uppercase tracking-wider text-gray-500 mb-4">Coherence Factory · Output Metrics</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 font-sans text-sm text-center">
+                <div><div class="font-mono text-amber font-bold text-2xl">~20 yrs</div><div class="text-gray-500 text-xs mt-1">Population doubling time</div></div>
+                <div><div class="font-mono text-amber font-bold text-2xl">85%+</div><div class="text-gray-500 text-xs mt-1">Youth retention</div></div>
+                <div><div class="font-mono text-amber font-bold text-2xl">Held</div><div class="text-gray-500 text-xs mt-1">Membrane integrity (internet age)</div></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4 text-center italic">The Substitution Principle has been thwarted. The Amish have not substituted connection for efficiency — and have preserved the social coherence the rest of the industrialized world is rapidly losing.</p>
+        </div>
+
+        <h3 class="font-display text-lg font-semibold text-accent uppercase tracking-wide mt-10 mb-4">Table 1 · Structural Rules Matrix</h3>
+        <div class="bg-card rounded-xl border border-white/5 overflow-x-auto my-8">
+            <table class="rule-table">
+                <thead>
+                    <tr>
+                        <th>Rule</th>
+                        <th>Technological Artifact</th>
+                        <th>Filter Mechanism</th>
+                        <th>System Goal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Proximity Limit</td><td>Horse &amp; Buggy</td><td>Physical constraint on velocity &amp; range</td><td>Dunbar-scale community / Spatial Fidelity</td></tr>
+                    <tr><td>Friction Requirement</td><td>Pneumatic Tools</td><td>High-effort energy generation</td><td>Prevent backgrounding of tech / Thermodynamic Resistance</td></tr>
+                    <tr><td>Anti-Bypass Rule</td><td>12V DC vs. Grid</td><td>Technical incompatibility</td><td>Prevent integration with global infrastructure / Topological Sovereignty</td></tr>
+                    <tr><td>Sanctuary Boundary</td><td>Telephone Shanty</td><td>Spatial separation of communication</td><td>Protect domestic visiting context / Attention Defense</td></tr>
+                    <tr><td>Mutual Aid Imperative</td><td>No Commercial Insurance</td><td>Rejection of indemnity</td><td>Enforce social interdependence / Economic Cohesion</td></tr>
+                    <tr><td>Finite Input Rule</td><td>Batteries / Solar</td><td>Metered energy supply</td><td>Prevent illusion of infinite resources / Resource Bounding</td></tr>
+                    <tr><td>Ownership Distinction</td><td>Taxis / Hired Drivers</td><td>Access without possession</td><td>Prevent change in habitus / Identity Preservation</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Conclusion -->
+    <section class="mb-12">
+        <div class="flex items-center gap-4 mb-8">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                <i class="fas fa-flag-checkered text-accent text-sm"></i>
+            </div>
+            <h2 class="font-display text-2xl font-semibold text-white tracking-wide uppercase">Conclusion · The Future of the Algorithm</h2>
+        </div>
+
+        <div class="prose-body">
+            <p>
+                The Amish <em>Ordnung</em> is a <strong>system-preservation algorithm</strong>. It is a rational, functional set of heuristics designed to filter Information Entropy and maintain high social coherence.
+            </p>
+            <p>
+                The <strong>Technological Axiom of Distance</strong> remains the central processing logic. By artificially maintaining distance — geographic, informational, energetic — the Amish preserve the distinctiveness of their system. They have effectively solved the Riddle of Amish Culture not by rejecting the world, but by filtering it through a high-friction membrane.
+            </p>
+            <p>
+                As the outside world becomes increasingly frictionless, unmetered, and high-velocity, the Amish algorithm offers a counter-model of friction-rich, metered, slow existence. It serves as a living laboratory for the value of <strong>constraints</strong> in an age of infinite excess. Their success is not due to isolation, but due to the rigorous application of these seven structural rules — which collectively manufacture the social coherence necessary for human flourishing in a high-entropy universe.
+            </p>
+        </div>
+
+        <div class="pullquote pl-6 py-4 my-10 rounded-r-lg">
+            <p class="text-xl italic text-gray-200 leading-relaxed font-serif">
+                The Amish do not "overcome" distance. They inhabit it. And the membrane holds.
+            </p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Sources -->
+    <section class="mb-12">
+        <div class="flex items-center gap-4 mb-8">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                <i class="fas fa-book text-accent text-sm"></i>
+            </div>
+            <h2 class="font-display text-2xl font-semibold text-white tracking-wide uppercase">Sources</h2>
+        </div>
+
+        <div class="bg-card rounded-xl p-6 border border-white/5">
+            <ul class="space-y-3 font-sans text-sm text-gray-400 leading-relaxed">
+                <li><span class="text-accent/70 font-mono mr-2">[10]</span><a href="https://muse.jhu.edu/book/33394" class="text-amber hover:text-accent transition-colors break-all" target="_blank" rel="noopener">Project MUSE — Why the Amish Sing</a></li>
+                <li><span class="text-accent/70 font-mono mr-2">[13]</span><a href="https://amishfarmandhouse.com/blog/amish-horse-and-buggies-guide/" class="text-amber hover:text-accent transition-colors break-all" target="_blank" rel="noopener">Amish Farm and House — Horse and Buggies in Lancaster's Amish Country</a></li>
+                <li><span class="text-accent/70 font-mono mr-2">[17]</span><a href="https://artdiamondblog.com/archives/2013/06/" class="text-amber hover:text-accent transition-colors break-all" target="_blank" rel="noopener">Art Diamond Blog — Amish Factory Uses Pneumatics in Place of Electricity</a></li>
+                <li><span class="text-accent/70 font-mono mr-2">[18]</span><a href="https://www.alleghenyyork.com/wps/portal/c/blog?p=amish-air-motor" class="text-amber hover:text-accent transition-colors break-all" target="_blank" rel="noopener">Allegheny York — Amish Air Motor Green Energy Solution</a></li>
+                <li><span class="text-accent/70 font-mono mr-2">[19]</span><a href="https://makezine.com/article/workshop/power-tools-retrofitted-for-the-amish/" class="text-amber hover:text-accent transition-colors break-all" target="_blank" rel="noopener">Make Magazine — Power Tools Retrofitted for the Amish</a></li>
+                <li><span class="text-accent/70 font-mono mr-2">[20]</span><a href="https://www.reddit.com/r/OffGrid/comments/10uu7nd/12v_vs_110_question/" class="text-amber hover:text-accent transition-colors break-all" target="_blank" rel="noopener">Reddit r/OffGrid — 12V vs 110V Question</a></li>
+                <li><span class="text-accent/70 font-mono mr-2">[24]</span><a href="https://kk.org/kk/" class="text-amber hover:text-accent transition-colors break-all" target="_blank" rel="noopener">Kevin Kelly — Lifestream</a></li>
+                <li><span class="text-accent/70 font-mono mr-2">[25]</span><a href="https://www.discoverlancaster.com/amish/technology/" class="text-amber hover:text-accent transition-colors break-all" target="_blank" rel="noopener">Discover Lancaster — Pennsylvania Amish &amp; Technology</a></li>
+                <li><span class="text-accent/70 font-mono mr-2">[26]</span><a href="https://djp3.westmont.edu/classes/2017_01_CS195/readings/TechnologicalPrudence.pdf" class="text-amber hover:text-accent transition-colors break-all" target="_blank" rel="noopener">Westmont — Technological Prudence: What the Amish Can Teach Us</a></li>
+                <li><span class="text-accent/70 font-mono mr-2">[27]</span><a href="https://amishamerica.com/amish-phone-shacks/" class="text-amber hover:text-accent transition-colors break-all" target="_blank" rel="noopener">Amish America — Not An Outhouse: The Amish Phone Shack</a></li>
+                <li><span class="text-accent/70 font-mono mr-2">[28]</span><a href="https://amishamerica.com/do-amish-use-telephones/" class="text-amber hover:text-accent transition-colors break-all" target="_blank" rel="noopener">Amish America — Do Amish Use Telephones?</a></li>
+                <li><span class="text-accent/70 font-mono mr-2">[29]</span><a href="https://groups.etown.edu/amishstudies/cultural-practices/mutual-aid/" class="text-amber hover:text-accent transition-colors break-all" target="_blank" rel="noopener">Elizabethtown College — Amish Studies: Mutual Aid</a></li>
+                <li><span class="text-accent/70 font-mono mr-2">[30]</span><a href="https://www.cammutualaid.com/" class="text-amber hover:text-accent transition-colors break-all" target="_blank" rel="noopener">C.A.M. Mutual Aid — Online Portal</a></li>
+                <li><span class="text-accent/70 font-mono mr-2">[31]</span><a href="https://in.gov/idoi/files/Bulletin_208_v_II.pdf" class="text-amber hover:text-accent transition-colors break-all" target="_blank" rel="noopener">IN.gov — Old Order Amish Liability Aid</a></li>
+                <li><span class="text-accent/70 font-mono mr-2">[32]</span><a href="https://www.cbsnews.com/news/amish-were-already-in-good-hands/" class="text-amber hover:text-accent transition-colors break-all" target="_blank" rel="noopener">CBS News — Amish: We're Already In Good Hands</a></li>
+                <li><span class="text-accent/70 font-mono mr-2">[33]</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5198134/" class="text-amber hover:text-accent transition-colors break-all" target="_blank" rel="noopener">PMC / NIH — Sharing the Load: Amish Healthcare Financing</a></li>
+                <li><span class="text-accent/70 font-mono mr-2">[36]</span><a href="https://amishamerica.com/can-amish-ride-in-cars/" class="text-amber hover:text-accent transition-colors break-all" target="_blank" rel="noopener">Amish America — Can Amish Ride in Cars?</a></li>
+                <li><span class="text-accent/70 font-mono mr-2">[37]</span><a href="https://direct.mit.edu/books/oa-monograph/chapter-pdf/2254755/c001100_9780262369381.pdf" class="text-amber hover:text-accent transition-colors break-all" target="_blank" rel="noopener">MIT Press — Encounter with Noah (Ownership vs. Access)</a></li>
+                <li><span class="text-accent/70 font-mono mr-2">[39]</span><a href="https://www.youtube.com/watch?v=Jhqs7tzar-0" class="text-amber hover:text-accent transition-colors break-all" target="_blank" rel="noopener">YouTube — The Riddle of Amish Culture</a></li>
+                <li><span class="text-accent/70 font-mono mr-2">[40]</span><a href="https://groups.etown.edu/amishstudies/cultural-practices/technology/" class="text-amber hover:text-accent transition-colors break-all" target="_blank" rel="noopener">Elizabethtown College — Amish Studies: Technology</a></li>
+            </ul>
+        </div>
+    </section>
+
+</main>
+
+<!-- Bottom Navigation -->
+<div class="gradient-line max-w-4xl mx-auto"></div>
+
+
+<!-- Footer -->
+
+
+<footer class="border-t border-white/5 mt-4">
+    <div class="max-w-4xl mx-auto px-6 py-10 text-center">
+        <p class="font-display text-sm tracking-widest uppercase text-gray-600">
+            <i class="fas fa-atom text-accent/40 mr-2"></i>15 + 15 = 100
+        </p>
+        <p class="text-xs text-gray-700 mt-2 font-sans">David Lowe &bull; Theophysics Institute</p>
+    </div>
+</footer>
+
+<script src="/glossary-linker.js" defer></script>
+
+<!-- MDA BOTTOM NAVIGATION v2 -->
+<div style="max-width:56rem;margin:0 auto;padding:2rem 1.5rem;border-top:1px solid rgba(255,255,255,0.05);">
+  <!-- Row 1: Prev | Series Home | Next -->
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+    <div style="flex:1;text-align:left;"><a href="MDA-047-amish-tech-filter-THE-FILTER.html" style="display:flex;align-items:center;gap:0.5rem;color:#9ca3af;text-decoration:none;font-family:'Inter',system-ui,sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;transition:color 0.2s;" onmouseover="this.style.color='#dc2626'" onmouseout="this.style.color='#9ca3af'"><i class="fas fa-arrow-left"></i> Previous</a></div>
+    <div style="flex:0 0 auto;text-align:center;"><a href="index.html" style="display:flex;align-items:center;gap:0.5rem;color:#dc2626;text-decoration:none;font-family:'Oswald',Impact,sans-serif;font-size:1rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;" onmouseover="this.style.color='#f87171'" onmouseout="this.style.color='#dc2626'"><i class="fas fa-list"></i> Series Home</a></div>
+    <div style="flex:1;text-align:right;"><a href="MDA-049-coherence-factory-THE-SYNTHESIS.html" style="display:flex;align-items:center;gap:0.5rem;color:#9ca3af;text-decoration:none;font-family:'Inter',system-ui,sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;transition:color 0.2s;" onmouseover="this.style.color='#dc2626'" onmouseout="this.style.color='#9ca3af'">Next <i class="fas fa-arrow-right"></i></a></div>
+  </div>
+  <!-- Row 2: Home Home -->
+  <div style="text-align:center;">
+    <a href="/" style="display:inline-flex;align-items:center;gap:0.4rem;color:#6b7280;text-decoration:none;font-family:'Inter',system-ui,sans-serif;font-size:0.75rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:0.35rem 0.75rem;" onmouseover="this.style.color='#f59e0b';this.style.borderColor='rgba(245,158,11,0.3)'" onmouseout="this.style.color='#6b7280';this.style.borderColor='rgba(255,255,255,0.06)'"><i class="fas fa-home"></i> Theophysics Home</a>
+  </div>
+  <!-- Position indicator -->
+  <div style="text-align:center;margin-top:0.75rem;">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:#374151;letter-spacing:0.15em;text-transform:uppercase;">MDA-048 of 54</span>
+  </div>
+</div>
+<!-- END MDA BOTTOM NAVIGATION v2 -->
+
+<section class="ring-nav">
+  <div class="ring-header">
+    <h2>Related Work</h2>
+    <p>Core article, supporting evidence, and broader context</p>
+  </div>
+  <div class="ring-tier ring-1 open">
+    <div class="ring-tier-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="ring-tier-dot"></div>
+      <span class="ring-tier-label">Ring 1 — This Article</span>
+      <span class="ring-tier-desc">The core argument</span>
+      <i class="fas fa-chevron-right ring-tier-chevron"></i>
+    </div>
+    <div class="ring-tier-cards"><p class="ring-empty">You are here.</p></div>
+  </div>
+  <div class="ring-tier ring-2">
+    <div class="ring-tier-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="ring-tier-dot"></div>
+      <span class="ring-tier-label">Ring 2 — Supporting Evidence</span>
+      <span class="ring-tier-desc">Deeper dives and formal treatments</span>
+      <i class="fas fa-chevron-right ring-tier-chevron"></i>
+    </div>
+    <div class="ring-tier-cards"><p class="ring-empty">No connections mapped yet.</p></div>
+  </div>
+  <div class="ring-tier ring-3">
+    <div class="ring-tier-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="ring-tier-dot"></div>
+      <span class="ring-tier-label">Ring 3 — Broader Context</span>
+      <span class="ring-tier-desc">Related topics across the framework</span>
+      <i class="fas fa-chevron-right ring-tier-chevron"></i>
+    </div>
+    <div class="ring-tier-cards"><p class="ring-empty">No connections mapped yet.</p></div>
+  </div>
+</section>
+
+<!-- BEGIN:COMPONENT:script:audio-pill-player -->
+<script>
+/* CODEX_MDA_CUSTOM_PILL_AUDIO_20260517 */
+(function(){
+  function formatTime(seconds){
+    if (!Number.isFinite(seconds)) return "0:00";
+    var minutes = Math.floor(seconds / 60);
+    var secs = Math.floor(seconds % 60);
+    return minutes + ":" + String(secs).padStart(2,"0");
+  }
+  function setPlayIcon(button, isPlaying){
+    button.innerHTML = '<i class="fas fa-' + (isPlaying ? 'pause' : 'play') + '"></i>';
+  }
+  document.querySelectorAll('[data-component="audio"][data-name="audio-pill-player"]').forEach(function(player){
+    var audio = player.querySelector(".native-audio");
+    var playBtn = player.querySelector(".play-btn");
+    var muteBtn = player.querySelector(".mute-btn");
+    var fill = player.querySelector(".fill");
+    var track = player.querySelector(".track");
+    var currentTime = player.querySelector(".current-time");
+    var duration = player.querySelector(".duration");
+    var playerKind = player.querySelector(".player-kind");
+    var playerTitle = player.querySelector(".player-title");
+    var playerDesc = player.querySelector(".player-desc");
+    var activeMode = "read";
+    function selectPill(pill){
+      if (!pill) return;
+      var wasPlaying = audio && !audio.paused;
+      activeMode = pill.dataset.mode || "read";
+      player.style.setProperty("--active", pill.dataset.color || "#d4af37");
+      player.style.setProperty("--active-rgb", pill.dataset.rgb || "212,175,55");
+      player.querySelectorAll(".mode-pill").forEach(function(item){ item.classList.toggle("active", item === pill); });
+      playerKind.textContent = pill.dataset.label || pill.textContent.trim();
+      playerTitle.textContent = pill.dataset.title || "Audio mode";
+      playerDesc.textContent = pill.dataset.desc || "";
+      audio.pause(); audio.removeAttribute("src"); audio.innerHTML = "";
+      if (pill.dataset.src) {
+        var source = document.createElement("source");
+        source.src = pill.dataset.src;
+        source.type = pill.dataset.type || "audio/mpeg";
+        audio.appendChild(source);
+      }
+      audio.load();
+      fill.style.width = "0%"; currentTime.textContent = "0:00"; duration.textContent = "0:00";
+      setPlayIcon(playBtn, false);
+      if (wasPlaying && pill.dataset.src) audio.play().then(function(){ setPlayIcon(playBtn, true); }).catch(function(){ setPlayIcon(playBtn, false); });
+    }
+    player.querySelectorAll(".mode-pill").forEach(function(pill){ pill.addEventListener("click", function(){ selectPill(pill); }); });
+    playBtn.addEventListener("click", function(){
+      var active = player.querySelector('.mode-pill[data-mode="' + activeMode + '"]');
+      if (!active || !active.dataset.src) {
+        playerDesc.textContent = "No audio file is wired for this mode yet. Drop in a direct MP3/M4A/WAV/OGG URL later and the player will pick it up.";
+        return;
+      }
+      if (audio.paused) audio.play().then(function(){ setPlayIcon(playBtn, true); }).catch(function(){ setPlayIcon(playBtn, false); });
+      else { audio.pause(); setPlayIcon(playBtn, false); }
+    });
+    muteBtn.addEventListener("click", function(){
+      audio.muted = !audio.muted;
+      muteBtn.innerHTML = '<i class="fas fa-volume-' + (audio.muted ? 'mute' : 'up') + '"></i>';
+    });
+    track.addEventListener("click", function(event){
+      if (!audio.duration) return;
+      var rect = track.getBoundingClientRect();
+      audio.currentTime = ((event.clientX - rect.left) / rect.width) * audio.duration;
+    });
+    audio.addEventListener("loadedmetadata", function(){ duration.textContent = formatTime(audio.duration); });
+    audio.addEventListener("timeupdate", function(){
+      currentTime.textContent = formatTime(audio.currentTime);
+      if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + "%";
+    });
+    audio.addEventListener("ended", function(){ setPlayIcon(playBtn, false); });
+    selectPill(player.querySelector(".mode-pill.active") || player.querySelector(".mode-pill"));
+  });
+})();
+</script>
+<!-- END:COMPONENT:script:audio-pill-player -->
+
+<script src="files/mda-browser-tts.js?v=20260529" defer></script>
+
+<script>
+/* MDA Reader Mode v2 — tab switching */
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    const bar = document.querySelector('.mda-reader-mode-bar');
+    if (!bar) return;
+
+    const buttons = bar.querySelectorAll('.mda-reader-mode-btn');
+    const stateLabel = bar.querySelector('[data-reader-mode-state]');
+    const messageDiv = bar.querySelector('[data-reader-mode-message]');
+
+    const messages = {
+      easy: '<strong>Easy</strong> mode shows the plain-language bridge version.',
+      standard: '<strong>Standard</strong> is the live article.',
+      academic: '<strong>Academic</strong> shows the method, caveats, and citations layer.',
+      proof: '<strong>Proof</strong> opens the evidence and derivation layer.',
+    };
+
+    buttons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const mode = btn.getAttribute('data-reader-mode');
+
+        /* Update active state */
+        buttons.forEach(function(b) {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        /* Update status text */
+        if (stateLabel) stateLabel.textContent = mode.charAt(0).toUpperCase() + mode.slice(1) + ' active';
+        if (messageDiv) messageDiv.innerHTML = messages[mode] || '';
+
+        /* Toggle content panels */
+        document.querySelectorAll('[data-reader-panel]').forEach(function(panel) {
+          panel.style.display = panel.getAttribute('data-reader-panel') === mode ? 'block' : 'none';
+        });
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
+
+
