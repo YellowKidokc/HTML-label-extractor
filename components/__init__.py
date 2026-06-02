@@ -1,0 +1,1 @@
+"""Component detector modules."""
